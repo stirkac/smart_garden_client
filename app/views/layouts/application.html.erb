@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>SmartGardenClient</title>
+  <%= stylesheet_link_tag    'application', media: 'all' %>
+  <%= javascript_include_tag 'application' %>
+  <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+  <%= csrf_meta_tags %>
+</head>
+<body>
+
+	<div id="wrapper">
+
+			<!-- Header -->
+				<section id="header" class="skel-layers-fixed">
+					<header>
+						<span class="image avatar"><%= image_tag "leaf.png" %></span>
+						<h1 id="logo"><a href="#">My Smart Garden</a></h1>
+						<p>All you need for perfect crop</p>
+					</header>
+					<nav id="nav">
+						<ul>
+							<li><a href="#one" class="active">Overview</a></li>
+							<li><a href="#two">Notificatons</a></li>
+							<li><a href="#three">Schedules</a></li>
+							<li><a href="#four">Settings</a></li>
+						</ul>
+					</nav>
+					<footer>
+						<ul class="icons">
+							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+						</ul>
+					</footer>
+				</section>
+
+			<!-- Main -->
+				<div id="main">
+					<%= yield %>
+				</div>
+
+			<!-- Footer -->
+				<section id="footer">
+					<div class="container">
+						<ul class="copyright">
+							<li>&copy; Sebastjan Stojnšek</li><li><%=DateTime.now.year%></li>
+						</ul>
+					</div>
+				</section>
+
+		</div>
+</body>
+</html>
