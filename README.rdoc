@@ -1,6 +1,6 @@
 == README
 
-This Rails application is used to provide temperature and humidity logging from API app - [smart_garden](https://github.com/<em>stirkac</em>/<em>smart_garden</em>/)
+This Rails application is used to provide temperature and humidity logging from API app - https://github.com/stirkac/smart_garden
 
 Things you need:
 
