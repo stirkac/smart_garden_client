@@ -1112,4 +1112,10 @@
 	display: inline;
 }
 
+@media screen and (max-width: 736px) {
+    #current_hum {
+			border-left: none;
+		}
+}
+
 
