@@ -19,5 +19,6 @@
 /* Wrapper */
 
 	#wrapper {
+		margin-top: -50px !important;
 		padding-right: 20em;
 	}
