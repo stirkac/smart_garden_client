@@ -8,12 +8,36 @@ $(function() {
   });
 });
 
-var chartData = generateChartData();
+getData().done(requestSuccess).fail(requestFailed);
 
-var chart = AmCharts.makeChart("chartdiv", {
+function getData() {
+    return $.ajax({
+        url : "<%=ENV['API_ADDRESS']%>"+"/statuses",
+        type: 'GET'
+    });
+}
+
+function requestSuccess(data) {
+    var chartData = [];
+    for (var i = 0; i < data.length; i++) {
+      chartData.push({
+          date: new Date(data[i]['created_at']),
+          temperature: data[i]['temperature'].toFixed(1),
+          humidity: data[i]['humidity'].toFixed(1)
+      });
+    };
+    makeChart(chartData);
+}
+
+function requestFailed (argument) {
+  $("#chartdiv").html("<h1 class='center'>Unable to get data! Please double check your settings.</h1>")
+}
+
+function makeChart (data) {
+  var chart = AmCharts.makeChart("chartdiv", {
     "type": "serial",
     "theme": "none",
-    "dataProvider": chartData,
+    "dataProvider": data,
     "valueAxes": [{
         "position": "left",
         "title": ""
@@ -43,25 +67,5 @@ var chart = AmCharts.makeChart("chartdiv", {
         "minPeriod": "mm",
         "parseDates": true
     }
-});
-
-function generateChartData() {
-    var chartData = [];
-    $.ajax({
-      url: "<%=ENV['API_ADDRESS']%>"+"/statuses",
-      async: false,
-      success:function(data) {
-        for (var i = 0; i < data.length; i++) {
-          chartData.push({
-              date: new Date(data[i]['created_at']),
-              temperature: data[i]['temperature'].toFixed(1),
-              humidity: data[i]['humidity'].toFixed(1)
-          });
-
-        };
-      }
-    });
-    return chartData;
+  });
 }
-
-
