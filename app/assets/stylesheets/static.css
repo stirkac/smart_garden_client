@@ -1,0 +1,545 @@
+@import url("http://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
+
+/* reset -------------------------- */
+html,
+body,
+div,
+ul,
+ol,
+li,
+dl,
+dt,
+dd,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+form,
+dfn,
+del,
+p,
+blockquote,
+fieldset,
+input,
+textarea,
+select,
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+nav,
+section,
+button,
+canvas,
+video {
+    margin: 0;
+    padding: 0;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+pre,
+code,
+address,
+caption,
+cite,
+code,
+th,
+dfn,
+del {
+
+    font-family: "Lato", sans-serif;
+    font-weight: normal;
+    font-style: normal;
+}
+ul,
+ol {
+    list-style: none;
+}
+fieldset,
+img {
+    border: none;
+}
+caption,
+th {
+    text-align: left;
+}
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+}
+input[type="button"],
+input[type="submit"],
+input[type="reset"],
+button {
+    cursor: pointer;
+    line-height: normal;
+}
+button,
+input {
+    line-height: normal;
+}
+input[type="hidden"],
+[hidden],
+.hidden {
+    display: none;
+}
+textarea {
+    overflow: auto;
+    resize: none;
+}
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+nav,
+section,
+.clearfix {
+    display: block;
+}
+audio,
+canvas,
+video {
+    display: inline-block;
+}
+a > img {
+    vertical-align: bottom;
+}
+strong,
+b {
+    font-weight: bold;
+}
+em,
+i {
+    font-style: italic;
+}
+del {
+    text-decoration: line-through;
+}
+:focus {
+    outline: none;
+}
+
+
+/* tools -------------------------- */
+.clear {
+    clear: both;
+    display: block;
+    line-height: 0;
+    height: 0;
+    font-size: 0;
+}
+.clearfix:after,
+.wrap:after,
+aside:after,
+section:after,
+article:after,
+.text:after {
+    content: ".";
+    display: block;
+    clear: both;
+    visibility: hidden;
+    line-height: 0;
+    height: 0;
+    font-size: 0;
+}
+.align-left {
+    float: left !important;
+}
+.align-right {
+    float: right !important;
+}
+.overflow-hidden {
+    overflow: hidden;
+    display: block;
+}
+.center {
+    margin: 0 auto;
+    text-align: center;
+}
+
+/* common -------------------------- */
+html {
+    height: 100%;
+    background: #ffffff;
+}
+body {
+    height: 100%;
+    font: 17px/26px "Helvetica Neue", Helvetica, Arial, sans-serif;
+    color: #6a6a6a;
+    -webkit-font-smoothing: antialiased;
+    -webkit-backface-visibility: hidden;
+}
+.main {
+    min-height: 100%;
+    overflow: hidden;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.wrap {
+    margin: 0 auto;
+    max-width: 940px;
+    padding: 0 30px;
+}
+a {
+    color: #26a6d1;
+    cursor: pointer;
+    -moz-transition: color 0.15s linear;
+    -o-transition: color 0.15s linear;
+    -webkit-transition: color 0.15s linear;
+    transition: color 0.15s linear;
+}
+a:hover {
+    color: #1e85a7;
+}
+.error {
+    color: #FF0000 !important;
+    border-color: #FF0000 !important;
+}
+.success {
+    color: #00CC0 !important;
+    border-color: #00CC00 !important;
+}
+.disabled {
+    color: #999999 !important;
+    border-color: #999999 !important;
+    cursor: default !important;
+}
+.social li a,
+.ico-help,
+.ico-like,
+.ico-present,
+.istore a:after {
+    background: url(images/sprite.png) no-repeat 0 0;
+}
+h1, h2, h3, h4, h5, h6 {
+    color: #324d5b;
+}
+h1, h2, h3 {
+    font-size: 30px;
+    line-height: 40px;
+    margin: 0 0 22px;
+}
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+
+/* header -------------------------- */
+header {
+    padding: 69px 0;
+}
+header .logo {
+    float: left;
+}
+header .logo a {
+    display: inline-block;
+}
+
+/* content -------------------------- */
+.simple {
+    text-align: center;
+    padding: 107px 0 95px;
+}
+.simple p {
+    margin: 0 60px 16px;
+}
+.promo {
+    background: url("http://www.foodwise.com.au/wp-content/uploads/2012/08/BACKGROUND-gardening.jpeg") center center;
+    background-size: cover;
+    color: #ffffff;
+}
+.promo .wrap {
+    position: relative;
+    min-height: 634px;
+}
+.promo-text {
+    text-align: right;
+    height: 634px;
+    width: 100%;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 18px;
+    line-height: 30px;
+}
+.promo-text p {
+    padding: 35px 0 0;
+}
+.promo .wrap img {
+    position: absolute;
+    bottom: 0;
+    right: 18px;
+}
+.promo-title {
+    font-size: 55px;
+    line-height: 60px;
+    font-weight: bold;
+}
+.promo-button {
+    display: inline-block;
+    white-space: nowrap;
+    height: 52px;
+    line-height: 52px;
+    font-weight: bold;
+    font-size: 20px;
+    text-decoration: none;
+    padding: 0 30px;
+    background: #ffffff;
+    text-transform: uppercase;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-transition: all 0.15s linear;
+    -o-transition: all 0.15s linear;
+    -webkit-transition: all 0.15s linear;
+    transition: all 0.15s linear;
+}
+.promo-button:hover {
+    background-color: #e2f9f5;
+    color: #26a5d1;
+}
+.promo-button:active {
+    color: #188bb2;
+    background-color: #e2f9f5;
+    -moz-box-shadow: inset 0 2px 0 rgba(0,0,1,.1);
+    -webkit-box-shadow: inset 0 2px 0 rgba(0,0,1,.1);
+    box-shadow: inset 0 2px 0 rgba(0,0,1,.1);
+}
+.promo-link {
+    color: #ffffff;
+    font-size: 20px;
+    line-height: 52px;
+    font-weight: bold;
+    margin: 0 0 0 35px;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+.promo-link:hover {
+    color: #c9f9f0;
+}
+
+.box {
+    display: none;
+}
+.box.visible {
+    display: block;
+}
+.subscribe {
+    background: #4acaa8;
+    text-align: center;
+    color: #ffffff;
+    text-align: center;
+    padding: 107px 0 113px;
+}
+.subscribe-title {
+    font-size: 30px;
+    line-height: 40px;
+    margin: 0 0 36px;
+}
+.subscribe-form {
+    display: inline-block;
+    margin: 0 0 30px;
+}
+.subscribe-email {
+    float: left;
+    border: 0;
+    width: 399px;
+    height: 52px;
+    font-size: 18px;
+    line-height: 22px;
+    padding: 15px;
+    background: #ffffff;
+    margin: 0 10px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.subscribe-button {
+    float: left;
+    border: 0;
+    width: 160px;
+    height: 52px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 20px;
+    color: #26a6d1;
+    background: #ffffff;
+    text-transform: uppercase;
+    margin: 0 10px;
+    -moz-border-radius: 5px;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.subscribe-note {
+    clear: both;
+}
+
+
+/* Responsive -------------------------- */
+@media (max-width: 959px){
+    .promo .wrap {
+        min-height: 0;
+    }
+    .promo .wrap img {
+        position: relative;
+        right: auto;
+        bottom: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    .promo-text {
+        padding-left: 0px !important;
+        text-align: center;
+        display: block;
+        height: auto;
+        width: auto;
+        padding: 65px 0 48px;
+    }
+    .promo-title {
+        font-size: 40px;
+        line-height: 50px;
+    }
+    .promo-link,
+    .promo-button {
+        margin: 0 15px 15px;
+    }
+    footer {
+        padding-top: 0;
+        background-color: #f6f6f6;
+    }
+    footer .logo {
+        display: none;
+    }
+    .copy,
+    .istore,
+    .social {
+        float: none;
+        margin: 0;
+        text-align: center;
+    }
+    .copy {
+        padding: 80px 0 25px;
+    }
+    .istore {
+        background: #ffffff;
+        margin: 0 -30px;
+        padding: 80px 30px;
+    }
+    .social ul {
+        display: inline-block;
+    }
+    .social ul li {
+        margin: 0 11px 11px;
+    }
+    .subscribe-email {
+        width: 300px;
+    }
+    .tabsblock {
+        padding-top: 60px;
+    }
+    .tabsblock .wrap {
+        min-height: 0;
+    }
+    .tabsblock .wrap img {
+        position: relative;
+        left: auto;
+        bottom: auto;
+        display: block;
+        margin: 0 auto;
+    }
+    .tab {
+        text-align: center;
+        padding-left: 0;
+        width: auto;
+        display: block;
+        height: auto;
+        vertical-align: top;
+    }
+    .tabs {
+        display: inline-block;
+    }
+    .tabs li {
+        margin: 0 7px 13px 6px;
+    }
+    .box-text {
+        margin: 0 0 60px;
+    }
+}
+@media (max-width: 767px){
+    header {
+        text-align: center;
+    }
+    header .logo {
+        float: none;
+        display: inline-block;
+    }
+    header .social {
+        display: none;
+    }
+    .feature {
+        width: 100%;
+    }
+    .subscribe-email {
+        width: 200px;
+    }
+}
+@media (max-width: 479px){
+    body {
+        word-wrap: break-word;
+    }
+    .simple p {
+        margin-left: 0;
+        margin-right: 0;
+    }
+    .subscribe-email {
+        width: 100%;
+        margin-bottom: 15px;
+        text-align: center;
+    }
+    .subscribe-button {
+        width: 100%;
+    }
+}
+
+/* Retina -------------------------- */
+@media only screen and (-webkit-min-device-pixel-ratio:2),
+only screen and (min--moz-device-pixel-ratio:2),
+only screen and (-o-min-device-pixel-ratio:2/1),
+only screen and (min-device-pixel-ratio:2),
+only screen and (min-resolution:192dpi),
+only screen and (min-resolution:2dppx){
+    .social li a,
+    .ico-help,
+    .ico-like,
+    .ico-present,
+    .istore a:after {
+        background-image: url(images/sprite@2x.png);
+        -moz-background-size: 300px 150px;
+        -ie-background-size: 300px 150px;
+        -o-background-size: 300px 150px;
+        -webkit-background-size: 300px 150px;
+        background-size: 300px 150px;
+    }
+}
+

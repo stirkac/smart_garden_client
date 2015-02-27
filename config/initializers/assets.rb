@@ -17,4 +17,6 @@ Rails.application.config.assets.precompile += %w(
   skel/ie/v8.css
   skel/ie/v9.css
   index.js
+  static.js
+  static.css
 )

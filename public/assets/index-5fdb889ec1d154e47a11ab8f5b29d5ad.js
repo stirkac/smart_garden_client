@@ -1,22 +1,18 @@
 $(function() {
-  var address = $("#api").val();
-  getChartData(address).done(requestSuccess).fail(requestFailed);
-  getCurrentData(address);
-});
-
-function getCurrentData (address) {
   $.ajax({
-    url:  address+"/current",
+    url:  "http://62.84.231.88"+"/current",
     success:function(data) {
       $("#current_temp").text(data['temperature'].toFixed(1)+"°C");
       $("#current_hum").text(data['humidity'].toFixed(1)+"%");
     }
   });
-}
+});
 
-function getChartData(address) {
+getData().done(requestSuccess).fail(requestFailed);
+
+function getData() {
     return $.ajax({
-        url : address+"/statuses",
+        url : "http://62.84.231.88"+"/statuses",
         type: 'GET'
     });
 }
@@ -73,3 +69,4 @@ function makeChart (data) {
     }
   });
 }
+;
