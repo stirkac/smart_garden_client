@@ -39,6 +39,7 @@ section,
 button,
 canvas,
 video {
+    font-family: "Lato", sans-serif;
     margin: 0;
     padding: 0;
 }
@@ -58,7 +59,6 @@ th,
 dfn,
 del {
 
-    font-family: "Lato", sans-serif;
     font-weight: normal;
     font-style: normal;
 }
@@ -260,7 +260,7 @@ header .logo a {
     margin: 0 60px 16px;
 }
 .promo {
-    background: url("http://www.foodwise.com.au/wp-content/uploads/2012/08/BACKGROUND-gardening.jpeg") center center;
+    background: url("http://naturalmommie.com/wp-content/uploads/2012/08/my-lavender.jpg") center center;
     background-size: cover;
     color: #ffffff;
 }
