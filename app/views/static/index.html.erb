@@ -1,28 +1,38 @@
 <section class="main">
     <section class="promo">
-        <div class="wrap">
-            <div class="promo-text center">
-                <div class="promo-title">My Smart Garden</div>
-                <p>Experience new, unobtrusive and easy way to gardening!</p>
-                <p><%=link_to "View Demo", index_path, :class => "promo-button"%> &nbsp; <a class="promo-link" href="#">Learn more</a></p>
-            </div><!-- promo-text -->
-        </div><!-- wrap -->
+        <div class="container title">
+            <header class="major">
+                <h2>Smart Garden</h2>
+            </header>
+            <div class="align-left">
+            <h3>Experience new, unobtrusive and easy way to gardening!</h3>
+            <h3><%=link_to "View Demo", index_path, :class => "promo-button"%> &nbsp; <a class="promo-link" href="#">Learn more</a></h3>
+            </div>
+        </div><!-- promo-text -->
     </section>
     <section class="simple">
         <div class="wrap">
             <h2>Grow. Discover. Give.</h2>
-            <p>To the lovers of our nature, having a garden is not a full time job anymore.</p> <p>You will discover how easy it is to grow, with computer on the watch and while you do other things.<br> You will get instatnt notifications when your garden needs attention, and fun social experience with people who share their experience.</p>
+            <p>To the lovers of our nature, having a garden is not a full time job anymore! <br>You will discover how easy it is to grow, with computer on the watch and while you do other things.<br> You will get instatnt notifications when your garden needs attention, and fun social experience with people who share their experience.</p>
         </div><!-- wrap -->
     </section><!-- simple -->
     <section class="subscribe">
         <div class="wrap">
             <div class="subscribe-title">Subscribe to our newsletter</div>
-            <div class="subscribe-form clearfix">
-                <form>
-                    <input type="email" placeholder="Your email adress" class="subscribe-email">
-                    <input type="button" value="Subscribe" class="subscribe-button">
+
+            <div class="container">
+                <form method="post" action="#">
+                    <div class="row uniform">
+                        <div class="8u"><input type="text" name="email" id="email" placeholder="e-mail address" />
+                        </div>
+                        <div class="4u">
+                            <ul class="actions">
+                                <li><input type="submit" value="Subscribe" /></li>
+                            </ul>
+                        </div>
+                    </div>
                 </form>
-            </div><!-- subscribe-form -->
+            </div>
             <div class="subscribe-note">If you want to recieve monthly updates from us just pop your email in the box.<br>We think that spam is for jerks - and jerks we are not.</div>
         </div><!-- wrap -->
     </section><!-- subscribe -->

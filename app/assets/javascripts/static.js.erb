@@ -12,4 +12,20 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require skel/skel.min
 //= require_self
+
+(function($) {
+
+	skel.init({
+		reset: 'full',
+		breakpoints: {
+			global: { href: '<%= asset_path("skel/style.css")%>', containers: '45em', grid: { gutters: ['2em', 0] } },
+			xlarge: { media: '(max-width: 1680px)', href: '<%= asset_path("skel/style-xlarge.css")%>' },
+			large: { media: '(max-width: 1280px)', href: '<%= asset_path("skel/style-large.css")%>', containers: '42em', grid: { gutters: ['1.5em', 0] }, viewport: { scalable: false } },
+			medium: { media: '(max-width: 1024px)', href: '<%= asset_path("skel/style-medium.css")%>', containers: '85%!' },
+			small: { media: '(max-width: 736px)', href: '<%= asset_path("skel/style-small.css")%>', containers: '90%!', grid: { gutters: ['1.25em', 0] } },
+			xsmall: { media: '(max-width: 480px)', href: '<%= asset_path("skel/style-xsmall.css")%>' }
+		}
+});
+})(jQuery);
