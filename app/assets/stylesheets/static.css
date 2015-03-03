@@ -13,20 +13,21 @@
  *= require_self
  */
 header.major h2 {
-    font-size: 4.5em !important;
     font-weight: 100;
-    font-family: 'Roboto', sans-serif !important;
     color: white !important;
 }
 
-.promo {
-
+.header {
     font-family: 'Roboto', sans-serif !important;
+    padding-bottom: 5vh;
+}
+
+.promo {
     background: url("http://naturalmommie.com/wp-content/uploads/2012/08/my-lavender.jpg") center center;
     background-size: cover;
     color: #ffffff;
     padding-bottom: 20vh;
-    padding-top: 25vh;
+    padding-top: 15vh;
 }
 .promo h3 {
     color: white
