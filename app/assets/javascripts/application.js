@@ -19,5 +19,5 @@
 //= require skel/init
 //= require amcharts/amcharts
 //= require amcharts/serial
-//= require index
+//= require grow
 //= require_self

@@ -2,10 +2,10 @@
 	<div class="container">
 		<h3>What is happening</h3>
 		<div id="current">
-				<small class="before">temperature </small><div id="current_temp">please wait..</div>
-				<div id="current_hum">loading</div><small class="after"> humidity</small>
+				<small class="before">temperature </small><div id="current_temp">21.8°C</div>
+				<div id="current_hum">34.7%</div><small class="after"> humidity</small>
 		</div>
-    <div id="chartdiv" style="width:100%; height:400px;"></div>
+    <div id="example_chart" style="width:100%; height:400px;"></div>
 	</div>
 </section>
 
@@ -72,3 +72,42 @@
 		</div>
 	</div>
 </section>
+<script type="text/javascript">
+
+
+
+  var chart = AmCharts.makeChart("example_chart", {
+    "type": "serial",
+    "theme": "none",
+    "dataProvider": [{"id":1972,"temperature":23.3,"humidity":41.0,"created_at":"2015-04-11T19:40:18.068Z","updated_at":"2015-04-11T19:40:18.068Z"},{"id":1973,"temperature":23.5,"humidity":43.0,"created_at":"2015-04-11T19:45:16.099Z","updated_at":"2015-04-11T19:45:16.099Z"},{"id":1974,"temperature":23.3,"humidity":41.2,"created_at":"2015-04-11T19:48:16.757Z","updated_at":"2015-04-11T19:48:16.757Z"},{"id":1975,"temperature":23.5,"humidity":39.9,"created_at":"2015-04-11T19:54:14.636Z","updated_at":"2015-04-11T19:54:14.636Z"},{"id":1976,"temperature":23.3,"humidity":41.2,"created_at":"2015-04-11T20:12:16.258Z","updated_at":"2015-04-11T20:12:16.258Z"},{"id":1977,"temperature":23.3,"humidity":40.2,"created_at":"2015-04-11T20:30:15.285Z","updated_at":"2015-04-11T20:30:15.285Z"},{"id":1978,"temperature":23.3,"humidity":41.5,"created_at":"2015-04-11T20:51:17.546Z","updated_at":"2015-04-11T20:51:17.546Z"},{"id":1979,"temperature":23.5,"humidity":42.7,"created_at":"2015-04-11T21:00:16.849Z","updated_at":"2015-04-11T21:00:16.849Z"},{"id":1980,"temperature":23.2,"humidity":44.0,"created_at":"2015-04-11T21:30:16.597Z","updated_at":"2015-04-11T21:30:16.597Z"},{"id":1981,"temperature":22.7,"humidity":45.1,"created_at":"2015-04-11T22:57:16.658Z","updated_at":"2015-04-11T22:57:16.658Z"},{"id":1982,"temperature":22.5,"humidity":46.5,"created_at":"2015-04-12T00:06:16.187Z","updated_at":"2015-04-12T00:06:16.187Z"},{"id":1983,"temperature":22.2,"humidity":47.7,"created_at":"2015-04-12T01:30:16.145Z","updated_at":"2015-04-12T01:30:16.145Z"},{"id":1984,"temperature":15.8,"humidity":47.2,"created_at":"2015-04-12T01:42:15.160Z","updated_at":"2015-04-12T01:42:15.160Z"},{"id":1985,"temperature":22.2,"humidity":47.0,"created_at":"2015-04-12T01:45:14.701Z","updated_at":"2015-04-12T01:45:14.701Z"},{"id":1986,"temperature":22.1,"humidity":48.2,"created_at":"2015-04-12T03:15:16.188Z","updated_at":"2015-04-12T03:15:16.188Z"},{"id":1987,"temperature":21.7,"humidity":49.4,"created_at":"2015-04-12T05:57:16.186Z","updated_at":"2015-04-12T05:57:16.186Z"},{"id":1988,"temperature":21.7,"humidity":50.7,"created_at":"2015-04-12T07:24:15.886Z","updated_at":"2015-04-12T07:24:15.886Z"},{"id":1989,"temperature":22.0,"humidity":49.7,"created_at":"2015-04-12T08:24:15.435Z","updated_at":"2015-04-12T08:24:15.435Z"},{"id":1990,"temperature":22.1,"humidity":44.9,"created_at":"2015-04-12T08:33:15.997Z","updated_at":"2015-04-12T08:33:15.997Z"},{"id":1991,"temperature":22.0,"humidity":38.4,"created_at":"2015-04-12T08:36:15.463Z","updated_at":"2015-04-12T08:36:15.463Z"},{"id":1992,"temperature":22.0,"humidity":41.7,"created_at":"2015-04-12T08:39:14.927Z","updated_at":"2015-04-12T08:39:14.927Z"},{"id":1993,"temperature":22.0,"humidity":40.2,"created_at":"2015-04-12T08:45:15.564Z","updated_at":"2015-04-12T08:45:15.564Z"},{"id":1994,"temperature":21.8,"humidity":37.4,"created_at":"2015-04-12T08:48:14.895Z","updated_at":"2015-04-12T08:48:14.895Z"},{"id":1995,"temperature":22.0,"humidity":39.1,"created_at":"2015-04-12T09:00:14.840Z","updated_at":"2015-04-12T09:00:14.840Z"},{"id":1996,"temperature":21.8,"humidity":35.5,"created_at":"2015-04-12T09:15:15.457Z","updated_at":"2015-04-12T09:15:15.457Z"},{"id":1997,"temperature":21.7,"humidity":37.9,"created_at":"2015-04-12T09:21:17.648Z","updated_at":"2015-04-12T09:21:17.648Z"},{"id":1998,"temperature":21.7,"humidity":39.4,"created_at":"2015-04-12T09:24:16.978Z","updated_at":"2015-04-12T09:24:16.978Z"},{"id":1999,"temperature":21.7,"humidity":38.2,"created_at":"2015-04-12T09:30:15.890Z","updated_at":"2015-04-12T09:30:15.890Z"},{"id":2000,"temperature":21.7,"humidity":33.7,"created_at":"2015-04-12T09:36:15.314Z","updated_at":"2015-04-12T09:36:15.314Z"},{"id":2001,"temperature":21.7,"humidity":36.2,"created_at":"2015-04-12T09:39:14.709Z","updated_at":"2015-04-12T09:39:14.709Z"},{"id":2002,"temperature":21.7,"humidity":37.2,"created_at":"2015-04-12T09:45:15.703Z","updated_at":"2015-04-12T09:45:15.703Z"},{"id":2003,"temperature":21.7,"humidity":33.7,"created_at":"2015-04-12T09:48:17.882Z","updated_at":"2015-04-12T09:48:17.882Z"},{"id":2004,"temperature":21.7,"humidity":35.7,"created_at":"2015-04-12T09:54:14.403Z","updated_at":"2015-04-12T09:54:14.403Z"},{"id":2005,"temperature":21.7,"humidity":37.2,"created_at":"2015-04-12T10:03:15.402Z","updated_at":"2015-04-12T10:03:15.402Z"},{"id":2006,"temperature":21.7,"humidity":34.2,"created_at":"2015-04-12T10:09:17.402Z","updated_at":"2015-04-12T10:09:17.402Z"},{"id":2007,"temperature":21.7,"humidity":35.9,"created_at":"2015-04-12T10:12:17.192Z","updated_at":"2015-04-12T10:12:17.192Z"},{"id":2008,"temperature":21.7,"humidity":34.4,"created_at":"2015-04-12T10:18:16.252Z","updated_at":"2015-04-12T10:18:16.252Z"},{"id":2009,"temperature":21.7,"humidity":37.5,"created_at":"2015-04-12T10:21:14.760Z","updated_at":"2015-04-12T10:21:14.760Z"},{"id":2010,"temperature":21.7,"humidity":35.1,"created_at":"2015-04-12T10:24:16.415Z","updated_at":"2015-04-12T10:24:16.415Z"},{"id":2011,"temperature":21.8,"humidity":36.7,"created_at":"2015-04-12T10:27:14.590Z","updated_at":"2015-04-12T10:27:14.590Z"},{"id":2012,"temperature":21.8,"humidity":35.2,"created_at":"2015-04-12T10:30:16.510Z","updated_at":"2015-04-12T10:30:16.510Z"}],
+    "valueAxes": [{
+        "position": "left",
+        "title": ""
+    }],
+    "graphs": [{
+        "type": "smoothedLine",
+        "lineColor": "#4acaa8",
+        "fillAlphas": 0.4,
+        "balloonText": "<b><span style='font-size:12px;'>[[value]]&deg;C </span></b>",
+        "valueField": "temperature"
+    },
+    {
+        "type": "smoothedLine",
+        "lineColor": "#999",
+        "fillAlphas": 0.1,
+        "balloonText": "<b><span style='font-size:10px;'>[[value]]% </span></b>",
+        "valueField": "humidity"
+    }
+    ],
+    "chartCursor": {
+        "categoryBalloonDateFormat": "JJ:NN, DD MMMM",
+        "cursorPosition": "mouse",
+        "cursorColor": "#4acaa8"
+    },
+    "categoryField": "created_at",
+    "categoryAxis": {
+        "minPeriod": "mm",
+        "parseDates": true
+    }
+  });
+</script>

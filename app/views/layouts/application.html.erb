@@ -18,14 +18,16 @@
 						<h1 id="logo"><a href="#">My Smart Garden</a></h1>
 						<p>All you need for perfect crop</p>
 					</header>
-					<nav id="nav">
-						<ul>
-							<li><a href="#one" class="active">Overview</a></li>
-							<li><a href="#two">Notificatons</a></li>
-							<li><a href="#three">Schedules</a></li>
-							<li><a href="#four">Settings</a></li>
-						</ul>
-					</nav>
+					<% if user_signed_in?%>
+						<nav id="nav">
+							<ul>
+								<li><a href="#one" class="active">Overview</a></li>
+								<li><a href="#two">Notificatons</a></li>
+								<li><a href="#three">Schedules</a></li>
+								<li><a href="#four">Settings</a></li>
+							</ul>
+						</nav>
+					<% end %>
 					<footer>
 						<ul class="icons">
 							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>

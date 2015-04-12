@@ -1,0 +1,75 @@
+<section id="one">
+	<div class="container">
+		<h3>Your grows</h3>
+		<ul>
+			<%@grows.each do |grow| %>
+				<li><%=link_to grow.name grow %></li>
+			<%end%>
+		</ul>
+	</div>
+</section>
+
+<section id="two">
+	<div class="container">
+		<h3>Notifications</h3>
+		<p>Don't have time to check? No problem, we'll keep you posted.</p>
+		<ul class="feature-icons">
+			<li class="fa-code">Set alarm</li>
+			<li class="fa-cubes">Temperature is too high</li>
+			<li class="fa-book">Read books and stuff</li>
+			<li class="fa-coffee">Drink much coffee</li>
+			<li class="fa-bolt">Lightning bolt</li>
+			<li class="fa-users">Shadow clone technique</li>
+		</ul>
+	</div>
+</section>
+
+<section id="three">
+	<div class="container">
+		<h3>Schedule</h3>
+		<p>Integer eu ante ornare amet commetus vestibulum blandit integer in curae ac faucibus integer non. Adipiscing cubilia elementum integer. Integer eu ante ornare amet commetus.</p>
+		<div class="features">
+			<article>
+				<div class="inner">
+					<h4>Remember to water</h4>
+					<p>You have scheduled to water your plants <b>today at 18:45</b></p>
+				</div>
+			</article>
+			<article>
+				<div class="inner">
+					<h4>Harvest</h4>
+					<p>Your crop should be available in 122 days!</p>
+				</div>
+			</article>
+		</div>
+	</div>
+</section>
+
+<section id="four">
+	<div class="container">
+		<h3>Settings</h3>
+		<p>Configure your garden here.</p>
+		<form method="post" action="#">
+			<div class="row uniform">
+				<div class="12u"><input type="text" name="api" id="api" placeholder="API endpoint IP" value="http://46.164.26.150" /></div>
+			</div>
+			<div class="row uniform">
+				<div class="12u"><input type="text" name="address" id="address" placeholder="Notifications address" /></div>
+			</div>
+			<div class="row uniform">
+				<div class="12u"><textarea name="message" id="message" placeholder="Message" rows="6"></textarea></div>
+			</div>
+			<div class="row uniform">
+				<div class="12u">
+					<ul class="actions">
+						<li><input type="submit" class="special" value="Save" /></li>
+					</ul>
+				</div>
+			</div>
+		</form>
+		<div class="center">
+			<%=link_to "Log out", destroy_user_session_path, :class => "button center"%>
+		</div>
+	</div>
+</section>
+

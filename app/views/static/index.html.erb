@@ -5,8 +5,16 @@
                 <h2>Smart Garden</h2>
             </header>
             <div class="align-left">
-            <h3 class="header">Experience new, unobtrusive and easy way to gardening!</h3>
-            <h3><%=link_to "View Demo", index_path, :class => "promo-button"%> &nbsp; <a class="promo-link" href="#">Learn more</a></h3>
+                <h3 class="header">Experience new, unobtrusive and easy way to gardening!</h3>
+                <h3>
+                <% if user_signed_in? %>
+                    <%=link_to "Dashboard", grow_index_path, :class => "promo-button"%> &nbsp;
+                    <%=link_to "Sign out", destroy_user_session_path, :class => "promo-link"%>
+                <% else %>
+                    <%=link_to "View Demo", index_path, :class => "promo-button"%> &nbsp;
+                    <%=link_to "Sign in", new_user_session_path, :class => "promo-link"%>
+                <% end %> 
+                </h3>
             </div>
         </div><!-- promo-text -->
     </section>
