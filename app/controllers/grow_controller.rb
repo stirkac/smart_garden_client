@@ -4,7 +4,10 @@ class GrowController < ApplicationController
 
   def index
     @grows = current_user.grows
-    if(@grows.size==1)
+    case @grows.size
+    when 0
+      redirect_to new_grow_path
+    when 1
       redirect_to @grows.first
     end
   end
