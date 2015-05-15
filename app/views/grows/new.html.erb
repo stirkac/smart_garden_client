@@ -2,7 +2,7 @@
 	<div class="container">
 		<h3>New plant to grow</h3>
 		<p>Please enter reqired information.</p>
-  		<%= form_for @grow, url: new_grow_path do |f| %>
+  		<%= form_for Grow.new, :url => { :action => "create" } do |f| %>
 			<div class="row uniform">
 				<div class="12u">
             		<%= f.text_field :name, required: true, :placeholder => "My Amazing Garden" %>

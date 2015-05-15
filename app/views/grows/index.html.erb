@@ -3,7 +3,7 @@
 		<h3>Your grows</h3>
 		<ul>
 			<%@grows.each do |grow| %>
-				<li><%=link_to grow.name grow %></li>
+				<li><%=link_to grow.name, grow%></li>
 			<%end%>
 		</ul>
 	</div>

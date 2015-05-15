@@ -8,7 +8,7 @@
                 <h3 class="header">Experience new, unobtrusive and easy way to gardening!</h3>
                 <h3>
                 <% if user_signed_in? %>
-                    <%=link_to "Dashboard", grow_index_path, :class => "promo-button"%> &nbsp;
+                    <%=link_to "Dashboard", grows_path, :class => "promo-button"%> &nbsp;
                     <%=link_to "Sign out", destroy_user_session_path, :class => "promo-link"%>
                 <% else %>
                     <%=link_to "View Demo", index_path, :class => "promo-button"%> &nbsp;

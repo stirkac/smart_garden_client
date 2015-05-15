@@ -1,5 +1,5 @@
 class Grow < ActiveRecord::Base
-  # t.string :api_location
+  #t.string :api_location
   #t.date :start
   #t.date :end
   #t.string :name
@@ -9,5 +9,5 @@ class Grow < ActiveRecord::Base
   #t.float :hum_low
   #t.float :hum_high
   belongs_to :user
-
+  validates_presence_of :user
 end
