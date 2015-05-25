@@ -6,6 +6,7 @@ class GrowsController < ApplicationController
     @grows = current_user.grows
     case @grows.size
     when 0
+			flash[:notice] = "Please add a new garden before continuing."
       redirect_to new_grow_path
     when 1
       redirect_to @grows.first
@@ -13,7 +14,8 @@ class GrowsController < ApplicationController
   end
 
   def show
-    @grow = current_user.grows.find(params[:id])
+    @grow = Grow.where(id: params[:id]).eager_load(:notifications, :schedules).first
+    @notifications = @grow.notifications
   end
 
   def new
@@ -24,9 +26,10 @@ class GrowsController < ApplicationController
     @grow = Grow.new(grows_attr)
     @grow.user = current_user
     if @grow.save
+			flash[:notice] = "Garden saved successfully."
       redirect_to @grow
     else
-      flash[:alert] = "Napaka."
+      flash[:alert] = "Error encontered while saving."
       render "new"
     end
   end

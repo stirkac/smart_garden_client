@@ -19,5 +19,6 @@
 //= require skel/init
 //= require amcharts/amcharts
 //= require amcharts/serial
+//= require datetimepicker/jquery.datetimepicker
 //= require grows
 //= require_self

@@ -18,7 +18,7 @@
 						<h1 id="logo"><a href="#">My Smart Garden</a></h1>
 						<p>All you need for perfect crop</p>
 					</header>
-					<% if user_signed_in?%>
+					<% if display_navigation %>
 						<nav id="nav">
 							<ul>
 								<li><a href="#one" class="active">Overview</a></li>
@@ -30,15 +30,18 @@
 					<% end %>
 					<footer>
 						<ul class="icons">
-							<li><a href="#" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
-							<li><a href="#" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
-							<li><a href="#" class="icon fa-github"><span class="label">Github</span></a></li>
+							<li><a href="https://twitter.com/stirkac" class="icon fa-twitter"><span class="label">Twitter</span></a></li>
+							<li><a href="http://facebook.com/sebastjan.stojnsek" class="icon fa-facebook"><span class="label">Facebook</span></a></li>
+							<li><a href="http://github.com/stirkac/" class="icon fa-github"><span class="label">Github</span></a></li>
 						</ul>
 					</footer>
 				</section>
 
 			<!-- Main -->
 				<div id="main">
+					<% flash.each do |key, value| %>
+						<div class="alert alert-<%= key %>"><%= value %></div>
+					<% end %>
 					<%= yield %>
 				</div>
 

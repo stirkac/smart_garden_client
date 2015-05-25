@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150403132630) do
+ActiveRecord::Schema.define(version: 20150522075137) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -32,6 +32,28 @@ ActiveRecord::Schema.define(version: 20150403132630) do
   end
 
   add_index "grows", ["user_id"], name: "index_grows_on_user_id", using: :btree
+
+  create_table "notifications", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "grow_id"
+    t.text     "content"
+    t.boolean  "dismissed"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "notifications", ["grow_id"], name: "index_notifications_on_grow_id", using: :btree
+  add_index "notifications", ["user_id"], name: "index_notifications_on_user_id", using: :btree
+
+  create_table "schedules", force: true do |t|
+    t.integer  "grow_id"
+    t.datetime "time"
+    t.text     "title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "schedules", ["grow_id"], name: "index_schedules_on_grow_id", using: :btree
 
   create_table "users", force: true do |t|
     t.string   "email",                  default: "", null: false

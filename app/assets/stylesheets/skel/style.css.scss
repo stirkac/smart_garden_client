@@ -491,6 +491,22 @@
 				display: block;
 				width: 100%;
 			}
+/* Alert */
+	
+	.alert{
+		position: fixed;
+	  top: 0;
+	  left: 10%;
+	  margin-top: 10px;
+	  margin-right: 10px;
+	}
+
+		.alert-error{
+			
+		}
+		.alert-alert{
+			color: #4acaa8;
+		}
 
 /* List */
 
@@ -1037,8 +1053,8 @@
 /* One */
 
 	#one:before {
-		background-image: url("http://www.livingate.com/wp-content/uploads/2013/07/gardening-tips-wallpaper-820x300.jpeg");
-		background-position: center right;
+		background-image: image-url("header-bg.jpg");
+		background-position: center center;
 		background-repeat: no-repeat;
 		background-size: cover;
 		content: '';

@@ -22,7 +22,12 @@
 				<div class="12u">
 					<ul class="actions">
 						<li>
-            				<%= f.submit "Add to My Gardens", :class => "special" %>
+							<div class="6u">
+            					<%= f.submit "Add to My Gardens", :class => "special" %>
+            				</div>
+            				<div class="6u">
+            					<br><%=link_to "Cancel", grows_path, class: "button" %>
+            				</div>
 						</li>
 					</ul>
 				</div>

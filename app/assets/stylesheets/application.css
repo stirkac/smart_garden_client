@@ -17,5 +17,6 @@
  *= require skel/style-small
  *= require skel/style-xsmall
  *= require skel/style
+ *= require datetimepicker/jquery.datetimepicker
  *= require_self
  */

@@ -3,6 +3,14 @@ $(function() {
     getChartData(address_location).done(requestSuccess).fail(requestFailed);
     getCurrentData(address_location);
   }
+  $('#new_schedule').on('ajax:error', function(event, xhr, status, error) {
+    $(this).append(xhr.responseText);
+  });
+  $('#new_schedule').on('ajax:success', function(event, data, status, xhr) {
+    $(".features").append(data);
+    $("#datetimepicker").val("");
+    $("#schedule_title").val("");
+  });
 });
 
 function getCurrentData (address) {
@@ -31,8 +39,8 @@ function requestSuccess(data) {
           humidity: data[i]['humidity'].toFixed(1)
       });
     };
-    return chartData;
     makeChart(chartData);
+    return chartData;
 }
 
 function requestFailed (argument) {
