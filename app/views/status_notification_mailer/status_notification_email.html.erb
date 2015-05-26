@@ -1,0 +1,17 @@
+<h1>Hello SmartGarden user!</h1>
+<p>Unfortunately, we have to notify you that your garden might need attention.</p>
+<h3>Potential issues are listed below:</h3>
+<ul>
+	<% case @status
+	when @status["humidity"] < @grow.hum_low %>
+		<li>Humidity detected is <%=@status["humidity"] - @grow.hum_low%>% too low</li>
+	<% when @status["humidity"] > @grow.hum_high %>
+		<li>Humidity detected is <%=@status["humidity"] - @grow.hum_high%> too high</li>
+	<% when @status["temperature"] < @grow.temp_low %>
+		<li>Temperature detected is <%=@status["temperature"] - @grow.temp_low%> too low</li>
+	<% when @status["temperature"] > @grow.temp_high %>
+		<li>Temperature detected is <%=@status["temperature"] - @grow.temp_high%> too high</li>
+	<% end %>
+</ul>
+<p><%=link_to "Check your garden wherever you are", @grow %> </p>
+<p>Your <%=link_to "SmartGarden", root_path %></p>

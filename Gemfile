@@ -28,10 +28,18 @@ group :development, :test do
   gem 'dotenv-rails'
 end
 
+# Heroku
 gem 'rails_12factor', group: :production
+
+# HTTP
+gem 'httparty'
 
 # Authentication
 gem 'devise'
+
+# Workers
+gem 'sidekiq'
+gem 'sidetiq'
 
 # Use ActiveModel has_secure_password
 # gem 'bcrypt', '~> 3.1.7'

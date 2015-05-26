@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'static#index'
   get 'index' => 'index#index'
-  resources :grows do 
+  resources :grows, :path => "my-gardens" do 
   	resources :schedules, only: [:create]
   end
 
