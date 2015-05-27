@@ -2,15 +2,17 @@
 <p>Unfortunately, we have to notify you that your garden might need attention.</p>
 <h3>Potential issues are listed below:</h3>
 <ul>
-	<% case @status
-	when @status["humidity"] < @grow.hum_low %>
-		<li>Humidity detected is <%=@status["humidity"] - @grow.hum_low%>% too low</li>
-	<% when @status["humidity"] > @grow.hum_high %>
-		<li>Humidity detected is <%=@status["humidity"] - @grow.hum_high%> too high</li>
-	<% when @status["temperature"] < @grow.temp_low %>
-		<li>Temperature detected is <%=@status["temperature"] - @grow.temp_low%> too low</li>
-	<% when @status["temperature"] > @grow.temp_high %>
-		<li>Temperature detected is <%=@status["temperature"] - @grow.temp_high%> too high</li>
+	<% if @status["humidity"].to_f < @grow.hum_low %>
+		<li>Humidity detected is <%= (@status["humidity"].to_f - @grow.hum_low).abs.round 2 %>% too low</li>
+	<% end %>
+	<% if @status["humidity"].to_f > @grow.hum_high %>
+		<li>Humidity detected is <%=(@status["humidity"].to_f - @grow.hum_high).abs.round 2 %>% too high</li>
+	<% end %>
+	<% if @status["temperature"].to_f < @grow.temp_low %>
+		<li>Temperature detected is <%=(@status["temperature"].to_f - @grow.temp_low).abs.round 2 %>°C too low</li>
+	<% end %>
+	<%if @status["temperature"].to_f > @grow.temp_high %>
+		<li>Temperature detected is <%=(@status["temperature"].to_f - @grow.temp_high).abs.round 2 %>°C too high</li>
 	<% end %>
 </ul>
 <p><%=link_to "Check your garden wherever you are", @grow %> </p>
