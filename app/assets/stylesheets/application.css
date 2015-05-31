@@ -18,5 +18,8 @@
  *= require skel/style-xsmall
  *= require skel/style
  *= require datetimepicker/jquery.datetimepicker
+ *= require nouislider/jquery.nouislider.min
+ *= require nouislider/jquery.nouislider.pips.min
+ *= require switchery
  *= require_self
  */

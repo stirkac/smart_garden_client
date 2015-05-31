@@ -20,5 +20,12 @@
 //= require amcharts/amcharts
 //= require amcharts/serial
 //= require datetimepicker/jquery.datetimepicker
+//= require nouislider/jquery.nouislider.all.min
+//= require switchery
 //= require grows
 //= require_self
+
+$(function() {
+	$('#alert').fadeOut(6000);
+	}
+);

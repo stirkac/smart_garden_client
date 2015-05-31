@@ -1,6 +1,6 @@
 <section id="one">
 	<div class="container">
-		<h3><%=@grow.name%></h3>
+		<h3><%=@grow.name.capitalize%></h3>
 		<div id="current">
 				<small class="before">temperature </small><div id="current_temp">please wait..</div>
 				<div id="current_hum">loading</div><small class="after"> humidity</small>
@@ -60,25 +60,62 @@
 <section id="four">
 	<div class="container">
 		<h3>Settings</h3>
-		<p>Configure your garden here.</p>
-		<form method="post" action="#">
-			<div class="row uniform">
-				<div class="12u"><input type="text" name="api" id="api" placeholder="API endpoint IP" value="<%=@grow.api_location%>" /></div>
+		<p class="bold">Configure your garden here.</p>
+		<div class="12u">
+			<div class="8u"><i class="fa fa-fire"></i> <span id="s_temp_low"></span>°C - <span id="s_temp_high"></span>°C</div>
+			<div class="12u">
+				<div id="temperature_slider"></div>
 			</div>
-			<div class="row uniform">
-				<div class="12u"><input type="text" name="address" id="address" placeholder="Notifications address" /></div>
+		</div>
+		<div class="12u">
+			<div class="8u"><i class="fa fa-tint"></i> <span id="s_hum_low"></span>% - <span id="s_hum_high"></span>%</div>
+			<div class="12u">
+				<div id="humidity_slider"></div>
 			</div>
-			<div class="row uniform">
-				<div class="12u"><textarea name="message" id="message" placeholder="Message" rows="6"></textarea></div>
+		</div>
+
+		<%=form_for @grow do |f| %>
+
+		<%=f.hidden_field :temp_high, value: @grow.temp_high %>
+		<%=f.hidden_field :temp_low, value: @grow.temp_low %>
+		<%=f.hidden_field :hum_high, value: @grow.hum_high %>
+		<%=f.hidden_field :hum_low, value: @grow.hum_low %>
+
+		<div class="12u">
+			<div class="6u">Sensor source (API) address</div>
+			<div class="12u"><%=f.text_field :api_location %></div>
+		</div>
+		<div class="row move-down">
+			<div class="10u">
+				<p>Allow parameter sharing</p>
 			</div>
-			<div class="row uniform">
+			<div class="1u">
+				<input type="checkbox" class="js-switch" checked />
+			</div>
+		</div>
+		<div class="row move-up">
 				<div class="12u">
 					<ul class="actions">
-						<li><input type="submit" class="special" value="Save values" /></li>
+						<li><%=f.submit "Save values", class: "special" %></li>
 					</ul>
 				</div>
 			</div>
-		</form>
+		<small>*If you allow parameter sharing, other users can use your settings based on similarity. We respect your privacy.</small>
+		<% end %>
+		<hr>
+		<p class="bold">Information</p>
+		<div class="12u">
+			<div class="6u">Notifications address</div>
+			<div class="12u"><small><%=current_user.email%></small></div>
+		</div>
+		<div class="12u">
+			<div class="6u">Garden description</div>
+			<div class="12u"><small><%=@grow.description%></small></div>
+		</div>
+		<div class="12u">
+			<div class="6u">Date of creation</div>
+			<div class="12u"><small><%=@grow.created_at.strftime("%d. %m. %Y")%></small></div>
+		</div>
 		<div class="center">
 			<%=link_to "Log out", destroy_user_session_path, :class => "button center"%>
 		</div>

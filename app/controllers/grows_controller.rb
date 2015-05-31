@@ -22,6 +22,15 @@ class GrowsController < ApplicationController
     @grow = Grow.new
   end
 
+  def update
+  	@grow=Grow.find(params[:id])
+  	if @grow.update(grows_attr)
+  		redirect_to @grow, notice: 'Parameters updated.'
+		else
+  		redirect_to @grow, error: 'Error occurred while saving data.'
+		end
+  end
+
   def create
     @grow = Grow.new(grows_attr)
     @grow.user = current_user
@@ -36,7 +45,7 @@ class GrowsController < ApplicationController
 
   private
   def grows_attr
-    p = params.require(:grow).permit(:api_location, :name, :description)
+    p = params.require(:grow).permit(:api_location, :name, :description, :temp_high, :temp_low, :hum_high, :hum_low)
   end
 
 end

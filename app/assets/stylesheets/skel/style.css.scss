@@ -493,19 +493,23 @@
 			}
 /* Alert */
 	
-	.alert{
-		position: fixed;
-	  top: 0;
-	  left: 10%;
-	  margin-top: 10px;
-	  margin-right: 10px;
+	#alert{
+	  width: 60%;
+	  position: fixed;
+	  top: 20px;
+	  left: 50%;
+	  margin: 0 0 0 -37.5%;
+	  color: #444;
+	  text-align: center;
+	  border-radius: 5px;
+		background-color: rgba(255, 255, 255, 0.8);
 	}
 
 		.alert-error{
-			
+			color: red;
 		}
 		.alert-alert{
-			color: #4acaa8;
+			color: white;
 		}
 
 /* List */
@@ -1130,12 +1134,52 @@
 	color: red;
 }
 
+#temperature_slider {
+	margin-bottom: 50px;
+}
+
+#humidity_slider {
+	margin-bottom: 50px;
+}
+
 .full-width {
 }
 
 .center{
 	margin: 0 auto;
 	text-align: center;
+}
+
+.align-right{
+	text-align: right;
+}
+
+.noUi-connect {
+	background-color: #4acaa8;
+}
+
+.bold {
+	font-weight: bold;
+}
+
+.move-up {
+	margin-top: -10px;
+}
+
+.move-up-lg {
+	margin-top: -45px;
+}
+
+.move-down{
+	margin-top: 20px;
+}
+	.move-down small {
+
+	}
+
+small {
+	font-size: 80%;
+	margin-left: 3%;
 }
 
 @media screen and (max-width: 640px) {

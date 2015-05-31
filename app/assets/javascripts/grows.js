@@ -11,7 +11,66 @@ $(function() {
     $("#datetimepicker").val("");
     $("#schedule_title").val("");
   });
+  init_slider();
+  var elem = document.querySelector('.js-switch');
+  var init = new Switchery(elem, { color: '#4acaa8'});
+  $('#div').delay(5000).fadeOut(400)
 });
+
+function init_slider () {
+  $("#temperature_slider").noUiSlider({
+    start: [$('#grow_temp_low').val(), $('#grow_temp_high').val()],
+    connect: true,
+    range: {
+      'min': 0,
+      'max': 50
+    },
+
+    behaviour: 'tap-drag',
+    format: wNumb({
+      mark: ',',
+      decimals: 1
+    }),
+  });
+
+  $('#temperature_slider').Link('lower').to($('#grow_temp_low'));
+  $('#temperature_slider').Link('lower').to($('#s_temp_low'));
+  $('#temperature_slider').Link('upper').to($('#grow_temp_high'));
+  $('#temperature_slider').Link('upper').to($('#s_temp_high'));
+
+  $('#temperature_slider').noUiSlider_pips({
+    mode: 'positions',
+    values: [0,20,40,60,80,100],
+    density: 2
+  });
+
+  $("#humidity_slider").noUiSlider({
+    start: [$('#grow_hum_low').val(), $('#grow_hum_high').val()],
+    connect: true,
+    range: {
+      'min': 0,
+      'max': 100
+    },
+
+    behaviour: 'tap-drag',
+    format: wNumb({
+      mark: ',',
+      decimals: 1
+    })
+  });
+
+  $('#humidity_slider').Link('lower').to($('#grow_hum_low'));
+  $('#humidity_slider').Link('lower').to($('#s_hum_low'));
+  $('#humidity_slider').Link('upper').to($('#grow_hum_high'));
+  $('#humidity_slider').Link('upper').to($('#s_hum_high'));
+
+  $('#humidity_slider').noUiSlider_pips({
+    mode: 'positions',
+    values: [0,20,40,60,80,100],
+    density: 2
+  });
+}
+
 
 function getCurrentData (address) {
   $.ajax({

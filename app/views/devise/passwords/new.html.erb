@@ -6,11 +6,11 @@
 	  <%= devise_error_messages! %>
 
 	  <div class="field">
-	    <%= f.label :email %><br />
-	    <%= f.email_field :email, autofocus: true %>
+	    <%= f.label :email, class: "move-down" %><br />
+	    <%= f.email_field :email, autofocus: true, class: "move-up-lg" %>
 	  </div>
 
-	  <div class="actions">
+	  <div class="actions move-down">
 	    <%= f.submit "Send me reset password instructions" %>
 	  </div>
 	<% end %>
