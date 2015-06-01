@@ -26,7 +26,6 @@ $(function() {
       $('#step_one').hide("fast");
       $('#step_two').show("fast");
     }).fail(function (data) {
-      //alert("Address entered does not appear as valid API");
       $('#grow_api_location').css( "border", "solid 3px #ff0000");
     });
   });

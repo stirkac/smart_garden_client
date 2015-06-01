@@ -6,17 +6,17 @@
 				<p>Please enter reqired information.</p>
 				<div class="row uniform">
 					<div class="12u">
-	            		<%= f.text_field :name, required: true, :placeholder => "My Amazing Garden" %>
+	            		<%= f.text_field :name, required: true, :placeholder => "My Amazing Garden", required: true %>
 					</div>
 				</div>
 				<div class="row uniform">
 					<div class="12u">
-						<%= f.text_area :description, :placeholder => "Here I will grow my spices" %>
+						<%= f.text_area :description, :placeholder => "Here I will grow my spices", required: true %>
 					</div>
 				</div>
 				<div class="row uniform">
 					<div class="12u">
-	            		<%= f.text_field :api_location, required: true, :placeholder => "http://42.0.42.0" %>
+	            		<%= f.text_field :api_location, required: true, :placeholder => "http://42.0.42.0", required: true %>
 	            	</div>
 				</div>
 				<div class="row move-down">
@@ -49,6 +49,7 @@
 				<%=f.hidden_field :hum_high, value: 60 %>
 				<%=f.hidden_field :hum_low, value: 30 %>
 			</div>
+
 			<div class="row uniform">
 				<div class="12u">
 					<ul class="actions">
