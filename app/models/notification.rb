@@ -10,6 +10,8 @@ class Notification < ActiveRecord::Base
   belongs_to :grow
   belongs_to :status
 
+  scope :not_dismissed, ->(){ where.not(dismissed: true)}
+
   validates_presence_of :grow
   after_commit :notify_user, on: :create
 

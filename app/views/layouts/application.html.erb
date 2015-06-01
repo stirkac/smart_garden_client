@@ -16,7 +16,12 @@
 					<header>
 						<span class="image avatar"><%= image_tag "leaf.png" %></span>
 						<h1 id="logo"><a href="#">My Smart Garden</a></h1>
-						<p>All you need for perfect crop</p>
+						<% if current_user.present? %>
+							<p><small>Signed in as</small></p>
+							<p class="move-up-md"><%=current_user.grows.count > 1 ? link_to("#{current_user.email}", grows_path) : "#{current_user.email}"%></p>
+						<% else %>
+							<p>All you need for perfect crop</p>
+						<% end %>
 					</header>
 					<% if display_navigation %>
 						<nav id="nav">

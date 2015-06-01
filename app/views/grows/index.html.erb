@@ -1,9 +1,12 @@
 <section id="one">
 	<div class="container">
-		<h2>Your grows</h2>
+		<h2>My Gardens</h2>
+		<p>Overview your gardens from here</p>
 		<ul>
 			<%@grows.each do |grow| %>
-				<li><%=link_to grow.name, grow%></li>
+			<hr>
+				<li><%=link_to grow.name, grow%> <small><%=grow.notifications.not_dismissed.count%> 
+				<%="notification".pluralize grow.notifications.not_dismissed.count %> pending</small></li>
 			<%end%>
 		</ul>
 		<h3>Another garden?</h3>
