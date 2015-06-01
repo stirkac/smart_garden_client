@@ -25,7 +25,7 @@ class GrowsController < ApplicationController
   def update
   	@grow=Grow.find(params[:id])
   	if @grow.update(grows_attr)
-  		redirect_to @grow, notice: 'Parameters updated.'
+  		redirect_to grow_path(@grow, anchor: "four"), notice: 'Parameters updated.'
 		else
   		redirect_to @grow, error: 'Error occurred while saving data.'
 		end
@@ -43,9 +43,15 @@ class GrowsController < ApplicationController
     end
   end
 
+  def destroy
+    Grow.find(params[:id]).delete
+    flash[:notice] = "Garden removed successfully."
+    redirect_to grows_path
+  end
+
   private
   def grows_attr
-    p = params.require(:grow).permit(:api_location, :name, :description, :temp_high, :temp_low, :hum_high, :hum_low)
+    p = params.require(:grow).permit(:api_location, :name, :description, :temp_high, :temp_low, :hum_high, :hum_low, :allow_sharing)
   end
 
 end

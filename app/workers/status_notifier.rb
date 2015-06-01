@@ -6,19 +6,17 @@ class StatusNotifier
   sidekiq_options retry: false
 
   def perform options={}
-    Grow.eager_load(:user).find_each do |grow|
-      grow_status = HTTParty.get(grow.api_location + "/current")
-      if grow_status.code < 400
-        unless (grow_status["humidity"].between?(grow.hum_low, grow.hum_high) and grow_status["temperature"].between?(grow.temp_low, grow.temp_high))
-          notify_user(status: grow_status, grow: grow)
+    Grow.not_up_to_date.find_each do |grow|
+      current_status = HTTParty.get(grow.api_location + "/current")
+      if current_status.code < 400
+        unless (current_status["humidity"].between?(grow.hum_low, grow.hum_high) and current_status["temperature"].between?(grow.temp_low, grow.temp_high))
+          status=Status.new current_status
+          if status.save!
+            Notification.new(grow: grow, status: status, dismissed: false, content: "params_not_in_range").save!
+          end
         end
       end
     end
   end
-  
-  def notify_user (status:, grow:)
-    StatusNotificationMailer.status_notification_email(status: status, grow: grow).deliver
-  end
-  
 
 end

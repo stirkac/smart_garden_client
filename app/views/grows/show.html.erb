@@ -37,10 +37,10 @@
 			<div class="4u">
 				<%=f.text_field :time, id: "datetimepicker", placeholder: "Select date" %>
 			</div>
-			<div class="3u">
+			<div class="5u">
 				<%=f.text_field :title, placeholder: "Description" %>
 			</div>
-			<div class="3u">
+			<div class="2u">
 				<%=f.submit "Add reminder", class: "button special" %>
 			</div>
 		</div>
@@ -90,7 +90,7 @@
 				<p>Allow parameter sharing</p>
 			</div>
 			<div class="1u">
-				<input type="checkbox" class="js-switch" checked />
+				<%=f.check_box :allow_sharing, class: "js-switch", checked: @grow.allow_sharing %>
 			</div>
 		</div>
 		<div class="row move-up">
@@ -103,7 +103,7 @@
 		<small>*If you allow parameter sharing, other users can use your settings based on similarity. We respect your privacy.</small>
 		<% end %>
 		<hr>
-		<p class="bold">Information</p>
+		<p class="bold">About garden</p>
 		<div class="12u">
 			<div class="6u">Notifications address</div>
 			<div class="12u"><small><%=current_user.email%></small></div>
@@ -116,8 +116,20 @@
 			<div class="6u">Date of creation</div>
 			<div class="12u"><small><%=@grow.created_at.strftime("%d. %m. %Y")%></small></div>
 		</div>
-		<div class="center">
-			<%=link_to "Log out", destroy_user_session_path, :class => "button center"%>
+		<hr>
+		<p class="bold">Danger zone</p>
+		<small>Beware: actions made in this area cannot be reversed!</small>
+		<div class="center move-down">
+			<ul class="actions">
+					<div class="row">
+					<div class="6u">
+						<li><%=link_to "Delete this garden", @grow, class: "button special-red center", data: { confirm: 'Deleting will result in loss of all data! Are you sure?'}, method: :delete%></li>
+					</div>
+					<div class="6u">
+						<li><%=link_to "Log out", destroy_user_session_path, :class => "button center"%></li>
+					</div>
+				</div>
+			</ul>
 		</div>
 	</div>
 </section>

@@ -14,7 +14,22 @@ $(function() {
   init_slider();
   var elem = document.querySelector('.js-switch');
   var init = new Switchery(elem, { color: '#4acaa8'});
-  $('#div').delay(5000).fadeOut(400)
+  $('#new_grow').submit(function(e) {
+    if ($('#step_one').css('display') != 'none' ){
+      e.preventDefault();
+    }
+    else{
+      $('#new_grow').unbind('submit').submit()
+    }
+    getChartData($('#grow_api_location').val()).done(function (data) {
+      $('input[name="commit"]').val("Add to My Gardens");
+      $('#step_one').hide("fast");
+      $('#step_two').show("fast");
+    }).fail(function (data) {
+      //alert("Address entered does not appear as valid API");
+      $('#grow_api_location').css( "border", "solid 3px #ff0000");
+    });
+  });
 });
 
 function init_slider () {

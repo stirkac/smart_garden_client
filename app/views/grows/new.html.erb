@@ -1,29 +1,60 @@
 <section id="two">
 	<div class="container">
 		<h3>New plant to grow</h3>
-		<p>Please enter reqired information.</p>
   		<%= form_for Grow.new, :url => { :action => "create" } do |f| %>
-			<div class="row uniform">
-				<div class="12u">
-            		<%= f.text_field :name, required: true, :placeholder => "My Amazing Garden" %>
+  			<div id="step_one">
+				<p>Please enter reqired information.</p>
+				<div class="row uniform">
+					<div class="12u">
+	            		<%= f.text_field :name, required: true, :placeholder => "My Amazing Garden" %>
+					</div>
 				</div>
-			</div>
-			<div class="row uniform">
-				<div class="12u">
-					<%= f.text_area :description, :placeholder => "Here I will grow my spices" %>
+				<div class="row uniform">
+					<div class="12u">
+						<%= f.text_area :description, :placeholder => "Here I will grow my spices" %>
+					</div>
 				</div>
+				<div class="row uniform">
+					<div class="12u">
+	            		<%= f.text_field :api_location, required: true, :placeholder => "http://42.0.42.0" %>
+	            	</div>
+				</div>
+				<div class="row move-down">
+					<div class="10u">
+						<p>Allow parameter sharing</p>
+					</div>
+					<div class="1u">
+						<%=f.check_box :allow_sharing, class: "js-switch", checked: true %>
+					</div>
+				</div>
+				<small>*If you allow parameter sharing, other users can use your settings based on similarity. We respect your privacy.</small>
+				<hr>
 			</div>
-			<div class="row uniform">
+			<div id="step_two">
+				<p>Values below are calculated based on people with similar gardens. Please adjust values to your liking.</p>
 				<div class="12u">
-            		<%= f.text_field :api_location, required: true, :placeholder => "http://42.0.42.0" %>
-            	</div>
+					<div class="8u"><i class="fa fa-fire"></i> <span id="s_temp_low"></span>°C - <span id="s_temp_high"></span>°C</div>
+					<div class="12u">
+						<div id="temperature_slider"></div>
+					</div>
+				</div>
+				<div class="12u">
+					<div class="8u"><i class="fa fa-tint"></i> <span id="s_hum_low"></span>% - <span id="s_hum_high"></span>%</div>
+					<div class="12u">
+						<div id="humidity_slider"></div>
+					</div>
+				</div>
+				<%=f.hidden_field :temp_high, value: 23 %>
+				<%=f.hidden_field :temp_low, value: 15 %>
+				<%=f.hidden_field :hum_high, value: 60 %>
+				<%=f.hidden_field :hum_low, value: 30 %>
 			</div>
 			<div class="row uniform">
 				<div class="12u">
 					<ul class="actions">
 						<li>
-							<div class="6u">
-            					<%= f.submit "Add to My Gardens", :class => "special" %>
+            				<div class="12u move-down">
+            					<%= f.submit "Continue", :class => "button special" %>
             				</div>
             				<div class="6u">
             					<br><%=link_to "Cancel", grows_path, class: "button" %>

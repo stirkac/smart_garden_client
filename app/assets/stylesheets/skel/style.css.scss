@@ -880,6 +880,30 @@
 				background-color: #39c29d;
 			}
 
+			/*RED*/
+			input[type="submit"].special-red,
+			input[type="reset"].special-red,
+			input[type="button"].special-red,
+			.button.special-red {
+				background-color: #FA7D61;
+				color: #ffffff !important;
+			}
+
+				input[type="submit"].special-red:hover,
+				input[type="reset"].special-red:hover,
+				input[type="button"].special-red:hover,
+				.button.special-red:hover {
+					background-color: #ED9682;
+				}
+
+				input[type="submit"].special-red:active,
+				input[type="reset"].special-red:active,
+				input[type="button"].special-red:active,
+				.button.special-red:active {
+					background-color: #EB6A4D;
+				}
+			/**/
+
 		input[type="submit"].disabled, input[type="submit"]:disabled,
 		input[type="reset"].disabled,
 		input[type="reset"]:disabled,
@@ -1176,6 +1200,10 @@
 	.move-down small {
 
 	}
+
+#step_two{
+	display: none;
+}
 
 small {
 	font-size: 80%;

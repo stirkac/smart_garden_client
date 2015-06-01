@@ -7,6 +7,14 @@ class Notification < ActiveRecord::Base
 	#created_at: datetime, 
 	#updated_at: datetime
 	
-  belongs_to :user
   belongs_to :grow
+  belongs_to :status
+
+  validates_presence_of :grow
+  after_commit :notify_user, on: :create
+
+  def notify_user
+    StatusNotificationMailer.status_notification_email(status: status, grow: grow).deliver
+  end
+
 end

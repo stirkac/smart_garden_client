@@ -9,5 +9,5 @@ class Schedule < ActiveRecord::Base
   belongs_to :grow
   validates_presence_of :time
   validates_presence_of :title
-  
+  validates_presence_of :grow
 end
