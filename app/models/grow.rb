@@ -15,7 +15,7 @@ class Grow < ActiveRecord::Base
       WHERE grows.id NOT IN (
         SELECT grows.id FROM grows
         INNER JOIN "notifications" ON "notifications"."grow_id" = "grows"."id" 
-        WHERE (notifications.created_at > '2015-06-02 15:57:45.696906') 
+        WHERE ( notifications.created_at > '#{2.hours.ago}' ) 
         GROUP BY grows.id
       )
       UNION ( SELECT grows.* FROM grows INNER JOIN "notifications" ON "notifications"."grow_id" = "grows"."id" WHERE "notifications"."id" IS NULL)

@@ -14,6 +14,16 @@ $(function() {
   init_slider();
   var elem = document.querySelector('.js-switch');
   var init = new Switchery(elem, { color: '#4acaa8'});
+  $('#dismiss').click(function(e) {
+    e.preventDefault();
+    $.ajax({
+      url:  $('#dismiss').attr('href'),
+      type: 'POST',
+      success:function(data) {
+        alert("success");
+      }
+    });
+  });
   $('#new_grow').submit(function(e) {
     if ($('#step_one').css('display') != 'none' ){
       e.preventDefault();

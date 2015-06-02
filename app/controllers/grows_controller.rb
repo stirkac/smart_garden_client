@@ -48,6 +48,13 @@ class GrowsController < ApplicationController
     redirect_to grows_path
   end
 
+  def dismiss
+    #Notification.by_grow(params[:id]).not_dismissed.update_all({ dismissed: true })
+    respond_to do |format|
+      format.json { render json: { success: true } }
+    end
+  end
+
   private
   def grows_attr
     p = params.require(:grow).permit(:api_location, :name, :description, :temp_high, :temp_low, :hum_high, :hum_low, :allow_sharing)

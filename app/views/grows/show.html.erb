@@ -13,7 +13,7 @@
 	<div class="container">
 		<h3>Notifications</h3>
 		<%if @grow.notifications.not_dismissed.present? %>
-			<p>Any message since you last logged in is displayed here. <a>Dismiss all</a></p>
+			<p>Any message requiring your attention in is displayed here. <%=link_to "Dismiss all", grow_dismiss_notifications_path(@grow), id: "dismiss" %></p>
 			<ul class="feature-icons">
 			<% @grow.notifications.not_dismissed.each do |notification| %>
 				<hr>
@@ -22,7 +22,7 @@
 			<% end %>
 			</ul>
 		<% else %>
-			<p>Don't have time to check? No problem, notifications will appear here and via email!</p>
+			<p>No notifications. Don't worry, notifications will appear here and via email as soon as we need your attention!</p>
 			<ul class="feature-icons">
 				<li class="fa-code">Scheduled event</li>
 				<li class="fa-cubes">Temperature is too high</li>

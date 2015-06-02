@@ -1,0 +1,9 @@
+<h1>Hello SmartGarden user!</h1>
+<p>You have scheduled to work on your garden <%=@grow.name%>.</p>
+<h3>Here are the details:</h3>
+<ul>
+	<li>Scheduled event: <%=@schedule.title%></li>
+	<li>Time: <%=@schedule.time.strftime("%d. %m. %Y at %k:%M")%></li>
+</ul>
+<p><%=link_to "Check your garden wherever you are", @grow %> </p>
+<p>Your <%=link_to "SmartGarden", root_path %></p>
