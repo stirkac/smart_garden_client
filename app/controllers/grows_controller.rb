@@ -49,7 +49,7 @@ class GrowsController < ApplicationController
   end
 
   def dismiss
-    #Notification.by_grow(params[:id]).not_dismissed.update_all({ dismissed: true })
+    Notification.where(grow_id: params[:grow_id]).not_dismissed.update_all({ dismissed: true })
     respond_to do |format|
       format.json { render json: { success: true } }
     end
