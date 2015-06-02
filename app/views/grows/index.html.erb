@@ -4,7 +4,7 @@
 		<p>Overview your gardens from here</p>
 		<ul>
 			<%@grows.each do |grow| %>
-			<hr>
+				<hr>
 				<li><%=link_to grow.name, grow%> <small><%=grow.notifications.not_dismissed.count%> 
 				<%="notification".pluralize grow.notifications.not_dismissed.count %> pending</small></li>
 			<%end%>

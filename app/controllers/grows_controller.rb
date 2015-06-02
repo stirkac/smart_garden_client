@@ -15,7 +15,6 @@ class GrowsController < ApplicationController
 
   def show
     @grow = Grow.where(id: params[:id]).eager_load(:notifications, :schedules).first
-    @notifications = @grow.notifications
   end
 
   def new

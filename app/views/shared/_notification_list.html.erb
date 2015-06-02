@@ -1,0 +1,12 @@
+<% if status["humidity"].to_f < grow.hum_low %>
+	<li class="fa-tint">Humidity detected is <%= (status["humidity"].to_f - grow.hum_low).abs.round 2 %>% too low</li>
+<% end %>
+<% if status["humidity"].to_f > grow.hum_high %>
+	<li class="fa-tint">Humidity detected is <%=(status["humidity"].to_f - grow.hum_high).abs.round 2 %>% too high</li>
+<% end %>
+<% if status["temperature"].to_f < grow.temp_low %>
+	<li class="fa-fire">Temperature detected is <%=(status["temperature"].to_f - grow.temp_low).abs.round 2 %>°C too low</li>
+<% end %>
+<%if status["temperature"].to_f > grow.temp_high %>
+	<li class="fa-fire">Temperature detected is <%=(status["temperature"].to_f - grow.temp_high).abs.round 2 %>°C too high</li>
+<% end %>

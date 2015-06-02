@@ -12,8 +12,15 @@
 <section id="two">
 	<div class="container">
 		<h3>Notifications</h3>
-		<%if @notifications.present? %>
-
+		<%if @grow.notifications.not_dismissed.present? %>
+			<p>Any message since you last logged in is displayed here. <a>Dismiss all</a></p>
+			<ul class="feature-icons">
+			<% @grow.notifications.not_dismissed.each do |notification| %>
+				<hr>
+				<%=render partial: "shared/notification_list", :locals => {:grow => @grow, :status => notification.status} %>
+				<li><small><%=time_ago_in_words notification.created_at%> ago</small></li>
+			<% end %>
+			</ul>
 		<% else %>
 			<p>Don't have time to check? No problem, notifications will appear here and via email!</p>
 			<ul class="feature-icons">
@@ -35,10 +42,10 @@
 		<%=form_for([@grow, Schedule.new], remote: true , :html => {'data-type' => 'html'}) do |f| %>
 		<div class="row">
 			<div class="4u">
-				<%=f.text_field :time, id: "datetimepicker", placeholder: "Select date" %>
+				<%=f.text_field :time, id: "datetimepicker", placeholder: "Select date", required: true %>
 			</div>
 			<div class="5u">
-				<%=f.text_field :title, placeholder: "Description" %>
+				<%=f.text_field :title, placeholder: "Description", required: true %>
 			</div>
 			<div class="2u">
 				<%=f.submit "Add reminder", class: "button special" %>
@@ -47,10 +54,20 @@
 		<%end%>
 		
 		<div class="features">
+			<% if @grow.schedules.present? %>
+				<% @grow.schedules.each do |schedule| %>
+					<article>
+						<div class="inner">
+							<h4><%=schedule.title.capitalize%></h4>
+							<p>Your should check back in <%=time_ago_in_words schedule.time %>!</p>
+						</div>
+					</article>
+				<% end %>
+			<% end %>
 			<article>
 				<div class="inner">
 					<h4>Harvest</h4>
-					<p>Your crop should be available in 122 days!</p>
+					<p>Your crop should be available in <%=time_ago_in_words DateTime.now+23.days %>!</p>
 				</div>
 			</article>
 		</div>

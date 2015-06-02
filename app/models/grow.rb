@@ -9,8 +9,20 @@ class Grow < ActiveRecord::Base
   #t.float :hum_low
   #t.float :hum_high
 
-  scope :not_up_to_date, ->( hours_ago = 2 ){ Grow.eager_load(:notifications).where("notifications.created_at < ? OR notifications.id IS NULL", DateTime.now - hours_ago.hours) }
-  
+  def self.not_updated
+    query = <<-SQL
+      SELECT grows.* FROM grows
+      WHERE grows.id NOT IN (
+        SELECT grows.id FROM grows
+        INNER JOIN "notifications" ON "notifications"."grow_id" = "grows"."id" 
+        WHERE (notifications.created_at > '2015-06-02 15:57:45.696906') 
+        GROUP BY grows.id
+      )
+      UNION ( SELECT grows.* FROM grows INNER JOIN "notifications" ON "notifications"."grow_id" = "grows"."id" WHERE "notifications"."id" IS NULL)
+    SQL
+    self.find_by_sql(query)
+  end
+
   belongs_to :user
   validates_presence_of :user
   has_many :schedules

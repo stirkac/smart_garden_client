@@ -4,6 +4,7 @@ class SchedulesController < ApplicationController
 
   def create
     @schedule = Schedule.new(schedule_attr)
+    @schedule.grow = Grow.find(params[:grow_id])
     respond_to do |format|
       if @schedule.save!
           format.js do
@@ -19,7 +20,7 @@ class SchedulesController < ApplicationController
 
   private
   def schedule_attr
-    p = params.require(:schedule).permit(:time, :title, :grow_id)
+    p = params.require(:schedule).permit(:time, :title, :grow)
   end
 
 end
