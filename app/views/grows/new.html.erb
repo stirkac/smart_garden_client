@@ -48,21 +48,20 @@
 				<%=f.hidden_field :hum_high, value: 60 %>
 				<%=f.hidden_field :hum_low, value: 30 %>
 			</div>
-
-			<div class="row uniform">
-				<div class="12u">
-					<ul class="actions">
-						<li>
-            				<div class="12u move-down">
-            					<%= f.submit "Continue", :class => "button special" %>
-            				</div>
-            				<div class="6u">
-            					<br><%=link_to "Cancel", grows_path, class: "button" %>
-            				</div>
-						</li>
-					</ul>
-				</div>
+			<div class="row move-up">
+					<div class="12u">
+						<ul class="actions">
+							<li><%= f.submit "Continue", :class => "special" %></li>
+						</ul>
+					</div>
 			</div>
+			<div class="row move-up">
+					<div class="12u">
+						<ul class="actions">
+		  				<li><%=link_to "Cancel", grows_path, class: "button" %></li>
+		  			</ul>
+		  		</div>
+		  </div>
 		<% end %>
 	</div>
 </section>
