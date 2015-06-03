@@ -18,8 +18,8 @@ class Schedule < ActiveRecord::Base
     query = <<-SQL
 
     SELECT "schedules".* FROM "schedules"  
-    WHERE ("schedules"."time" >= '#{1.day.ago}' 
-    	AND "schedules"."time" < '#{1.hour.ago}'
+    WHERE ("schedules"."time" <= '#{1.day.from_now}' 
+    	AND "schedules"."time" > '#{1.hour.from_now}'
     	AND "schedules"."id" NOT IN (
     		SELECT schedules.id FROM schedules
     		INNER JOIN "notifications" ON "notifications"."schedule_id" = "schedules"."id"

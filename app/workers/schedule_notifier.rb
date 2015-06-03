@@ -7,7 +7,7 @@ class ScheduleNotifier
 
   def perform options={}
     Schedule.not_updated.each do |schedule|
-    	Notification.new(grow: grow, schedule: schedule, dismissed: false, content: "scheduled_notification").save!
+    	Notification.new(grow: schedule.grow, schedule: schedule, dismissed: false, content: "scheduled_notification").save!
     end
   end
 
