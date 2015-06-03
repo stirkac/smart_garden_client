@@ -11,6 +11,9 @@ class Schedule < ActiveRecord::Base
   validates_presence_of :title
   validates_presence_of :grow
 
+  scope :present, ->(){ where(Schedule.arel_table[:time].gt(DateTime.now)) }
+
+
   def self.not_updated
     query = <<-SQL
 

@@ -17,8 +17,12 @@
 			<ul class="feature-icons">
 			<% @grow.notifications.not_dismissed.each do |notification| %>
 				<hr>
-				<%=render partial: "shared/notification_list", :locals => {:grow => @grow, :status => notification.status} %>
-				<li><small><%=time_ago_in_words notification.created_at%> ago</small></li>
+				<% if notification.status.present? %>
+					<%=render partial: "shared/notification_list", :locals => {:grow => @grow, :status => notification.status} %>
+					<li><small><%=time_ago_in_words notification.created_at%> ago</small></li>
+				<% elsif notification.schedule.present?%>
+					<li class="fa-clock-o">Scheduled to do <%=notification.schedule.title%> <small><% if notification.schedule.time < Time.now %><%= time_ago_in_words(notification.schedule.time)+" ago" %><% else %><%= time_ahead_in_words(notification.schedule.time) %><% end %></small></li>
+				<% end %>
 			<% end %>
 			</ul>
 		<% else %>
@@ -54,8 +58,8 @@
 		<%end%>
 		
 		<div class="features">
-			<% if @grow.schedules.present? %>
-				<% @grow.schedules.each do |schedule| %>
+			<% if @grow.schedules.present.present? %>
+				<% @grow.schedules.present.each do |schedule| %>
 					<article>
 						<div class="inner">
 							<h4><%=schedule.title.capitalize%></h4>

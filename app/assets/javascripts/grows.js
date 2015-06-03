@@ -20,7 +20,7 @@ $(function() {
       url:  $('#dismiss').attr('href'),
       type: 'POST',
       success:function(data) {
-        alert("success");
+        $("#two .container").html("<p>No notifications. Don't worry, notifications will appear here and via email as soon as we need your attention!</p><ul class='feature-icons'><li class='fa-code'>Scheduled event</li><li class='fa-cubes'>Temperature is too high</li><li class='fa-book'>Check humidity</li><li class='fa-coffee'>Drink much coffee</li><li class='fa-bolt'>Lightning bolt</li><li class='fa-users'>Shadow clone technique</li></ul>");
       }
     });
   });
