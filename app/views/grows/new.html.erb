@@ -3,21 +3,20 @@
 		<h3>New plant to grow</h3>
   		<%= form_for Grow.new, :url => { :action => "create" } do |f| %>
   			<div id="step_one">
-				<p>Please enter reqired information.</p>
 				<div class="row uniform">
-					<div class="12u">
-	            		<%= f.text_field :name, required: true, :placeholder => "My Amazing Garden", required: true %>
+					<div class="6u move-down"><p>Please enter information about your garden.</p></div>
+					<div class="12u move-up">
+	            		<%= f.text_field :name, required: true, :placeholder => "Garden name", required: true %>
 					</div>
 				</div>
 				<div class="row uniform">
 					<div class="12u">
-						<%= f.text_area :description, :placeholder => "Here I will grow my spices", required: true %>
+						<%= f.text_area :description, :placeholder => "Enter name of plant you are growing..", required: true %>
 					</div>
 				</div>
-				<div class="row uniform">
-					<div class="12u">
-	            		<%= f.text_field :api_location, required: true, :placeholder => "http://42.0.42.0", required: true %>
-	            	</div>
+				<div class="12u move-down">
+					<div class="6u">Sensor source (API) address</div>
+					<div class="12u"><%=f.text_field :api_location, placeholder: "http://192.168.1.1" %></div>
 				</div>
 				<div class="row move-down">
 					<div class="10u">
@@ -31,7 +30,7 @@
 				<hr>
 			</div>
 			<div id="step_two">
-				<p>Values below are calculated based on people with similar gardens. Please adjust values to your liking.</p>
+				<p>Values below are suggested based on your description. Please adjust values.</p>
 				<div class="12u">
 					<div class="8u"><i class="fa fa-fire"></i> <span id="s_temp_low"></span>°C - <span id="s_temp_high"></span>°C</div>
 					<div class="12u">

@@ -8,6 +8,7 @@ Rails.application.routes.draw do
   get 'index' => 'index#index'
   resources :grows, :path => "my-gardens" do
     post "dismiss_notifications" => 'grows#dismiss'
+    get "suggested_data" => 'grows#suggested_data', on: :collection
   	resources :schedules, only: [:create]
   end
 

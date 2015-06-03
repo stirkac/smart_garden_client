@@ -5,7 +5,7 @@
 		<ul>
 			<%@grows.each do |grow| %>
 				<hr>
-				<li><%=link_to grow.name, grow%> <small><%=grow.notifications.not_dismissed.count%> 
+				<li class="fa-code"><%=link_to grow.name, grow%> <small><%=grow.notifications.not_dismissed.count%> 
 				<%="notification".pluralize grow.notifications.not_dismissed.count %> pending</small></li>
 			<%end%>
 		</ul>

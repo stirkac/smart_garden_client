@@ -55,6 +55,19 @@ class GrowsController < ApplicationController
     end
   end
 
+  def suggested_data
+    @grows=Grow.by_description(params[:description])
+    respond_to do |format|
+      format.json { render json: { 
+        hum_high: @grows.average(:hum_high),
+        hum_low: @grows.average(:hum_low),
+        temp_high: @grows.average(:temp_high),
+        temp_low: @grows.average(:temp_low)
+        } 
+      }
+    end
+  end
+
   private
   def grows_attr
     p = params.require(:grow).permit(:api_location, :name, :description, :temp_high, :temp_low, :hum_high, :hum_low, :allow_sharing)

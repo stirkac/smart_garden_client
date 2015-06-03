@@ -25,21 +25,39 @@ $(function() {
     });
   });
   $('#new_grow').submit(function(e) {
+    handleCreate(e);
+  });
+});
+
+function handleCreate (e) {
     if ($('#step_one').css('display') != 'none' ){
       e.preventDefault();
+      getChartData($('#grow_api_location').val()).done(function (data) {
+        getSuggestedData($('#grow_description').val());
+        $('input[name="commit"]').val("Add to My Gardens");
+        $('#step_one').hide("fast");
+        $('#step_two').show("fast");
+      }).fail(function (data) {
+        $('#grow_api_location').css( "border", "solid 3px #ff0000");
+      });
     }
     else{
       $('#new_grow').unbind('submit').submit()
     }
-    getChartData($('#grow_api_location').val()).done(function (data) {
-      $('input[name="commit"]').val("Add to My Gardens");
-      $('#step_one').hide("fast");
-      $('#step_two').show("fast");
-    }).fail(function (data) {
-      $('#grow_api_location').css( "border", "solid 3px #ff0000");
-    });
+}
+
+function getSuggestedData (text) {
+  $.ajax({
+    data: { description: text },
+    url: "suggested_data",
+    success:function(data) {
+      if(data['hum_high'] != null){
+        $("#humidity_slider").val([data['hum_low'], data['hum_high']]);
+        $("#temperature_slider").val([data['temp_low'], data['temp_high']]);
+      }
+    }
   });
-});
+}
 
 function init_slider () {
   $("#temperature_slider").noUiSlider({

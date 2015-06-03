@@ -23,6 +23,8 @@ class Grow < ActiveRecord::Base
     self.find_by_sql(query)
   end
 
+  scope :by_description, ->(text){ Grow.where(allow_sharing: true).where("description LIKE '%#{text.downcase}%'")}
+
   belongs_to :user
   validates_presence_of :user
   has_many :schedules
