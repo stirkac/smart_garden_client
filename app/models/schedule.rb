@@ -11,6 +11,8 @@ class Schedule < ActiveRecord::Base
   validates_presence_of :title
   validates_presence_of :grow
 
+  has_many :notifications
+
   scope :present, ->(){ where(Schedule.arel_table[:time].gt(DateTime.now)) }
 
 

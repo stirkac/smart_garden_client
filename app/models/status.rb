@@ -4,4 +4,7 @@ class Status < ActiveRecord::Base
 	#humidity: float, 
 	#created_at: datetime, 
 	#updated_at: datetime
+	
+	has_many :notifications
+
 end
