@@ -1,3 +1,4 @@
+include ActionView::Helpers::DateHelper
 class GrowsController < ApplicationController
 
   before_filter :authenticate_user!
@@ -37,7 +38,7 @@ class GrowsController < ApplicationController
 			flash[:notice] = "Garden saved successfully."
       redirect_to @grow
     else
-      flash[:alert] = "Error encontered while saving."
+      flash[:alert] = "Error encountered while saving."
       render "new"
     end
   end
@@ -66,6 +67,11 @@ class GrowsController < ApplicationController
         } 
       }
     end
+  end
+
+  def get_devices
+    devices = Device.present
+    render json: devices.map {|device| {text: device.api_location, value: device.api_location, selected: false, description: "Connected #{time_ago_in_words(device.created_at)} ago.", imageSrc: "https://www.raspberrypi.org/wp-content/uploads/2012/02/Raspian_SD-150x150.png"}}
   end
 
   private

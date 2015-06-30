@@ -24,10 +24,40 @@ $(function() {
       }
     });
   });
+
+  //New grow two step form
   $('#new_grow').submit(function(e) {
     handleCreate(e);
   });
+  //New grow dropdown
+  if ($('#select_device').css('display') != 'none') {
+    dropDownData().done(handleDropdown).fail(function(){
+      console.log("failed");
+    });
+  }
+
 });
+
+function dropDownData() {
+  return $.ajax({
+      url : "available_devices",
+      type: 'GET'
+  });
+}
+
+function handleDropdown (dropdownData) {
+  $('#select_device').ddslick({
+    data: dropdownData,
+    width: "100%",
+    background: "#FFF",
+    selectText: "Select your sensor device...",
+    imagePosition:"left",
+    onSelected: function(selectedData){
+      $('#grow_api_location').val(selectedData.selectedData.value);
+        $('.dd-select').css( "border", "solid 3px #e4e4e4");
+    }   
+  });
+}
 
 function handleCreate (e) {
     if ($('#step_one').css('display') != 'none' ){
@@ -38,7 +68,7 @@ function handleCreate (e) {
         $('#step_one').hide("fast");
         $('#step_two').show("fast");
       }).fail(function (data) {
-        $('#grow_api_location').css( "border", "solid 3px #ff0000");
+        $('.dd-select').css( "border", "solid 3px #ff0000");
       });
     }
     else{

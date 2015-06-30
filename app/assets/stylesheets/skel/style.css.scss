@@ -1264,3 +1264,30 @@ li { display: inline; }
 	color: white;
 }
 
+.dd-selected {
+	font-weight: 200 !important;
+	border-bottom-color: transparent;
+}
+.dd-selected:hover {
+	color: #aaa !important;
+}
+
+.dd-select{
+		-moz-appearance: none;
+		-webkit-appearance: none;
+		-o-appearance: none;
+		-ms-appearance: none;
+		appearance: none;
+		border-radius: 5px !important;
+		border: none !important;
+		border: solid 2px #e4e4e4 !important;
+		display: block;
+		outline: 0;
+		padding: 0 1em;
+		text-decoration: none !important;
+		width: 100%;
+		color: #aaa !important;
+		font-style: italic !important;
+		opacity: 1.0;
+}
+

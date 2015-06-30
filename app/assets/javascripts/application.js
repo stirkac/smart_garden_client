@@ -21,6 +21,7 @@
 //= require amcharts/serial
 //= require datetimepicker/jquery.datetimepicker
 //= require nouislider/jquery.nouislider.all.min
+//= require ddslick/jquery.ddslick.min
 //= require switchery
 //= require grows
 //= require_self

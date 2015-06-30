@@ -11,12 +11,12 @@
 				</div>
 				<div class="row uniform">
 					<div class="12u">
-						<%= f.text_area :description, :placeholder => "Enter name of plant you are growing..", required: true %>
+						<%= f.text_area :description, :placeholder => "Enter name of plant you are growing...", required: true %>
 					</div>
 				</div>
 				<div class="12u move-down">
-					<div class="6u">Sensor source (API) address</div>
-					<div class="12u"><%=f.text_field :api_location, placeholder: "http://192.168.1.1" %></div>
+						<%=f.hidden_field :api_location %>
+						<div id="select_device"></div>
 				</div>
 				<div class="row move-down">
 					<div class="10u">
