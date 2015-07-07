@@ -1,30 +1,18 @@
 $(function() {
+  //Get data where applicable
   if (typeof address_location !== 'undefined') {
     getChartData(address_location).done(requestSuccess).fail(requestFailed);
     getCurrentData(address_location);
   }
-  $('#new_schedule').on('ajax:error', function(event, xhr, status, error) {
-    $(this).append(xhr.responseText);
-  });
-  $('#new_schedule').on('ajax:success', function(event, data, status, xhr) {
-    $(".features").append(data);
-    $("#datetimepicker").val("");
-    $("#schedule_title").val("");
-  });
-  init_slider();
+  horizontalValueSliderInit(); //temperature and humidity sliders
+  twoStepForm(); //new garden form
+  handleNotifications(); //notifications on show page
+  handleSchedule(); //schedules on show page
   var elem = document.querySelector('.js-switch');
   var init = new Switchery(elem, { color: '#4acaa8'});
-  $('#dismiss').click(function(e) {
-    e.preventDefault();
-    $.ajax({
-      url:  $('#dismiss').attr('href'),
-      type: 'POST',
-      success:function(data) {
-        $("#two .container").html("<p>No notifications. Don't worry, notifications will appear here and via email as soon as we need your attention!</p><ul class='feature-icons'><li class='fa-code'>Scheduled event</li><li class='fa-cubes'>Temperature is too high</li><li class='fa-book'>Check humidity</li><li class='fa-coffee'>Drink much coffee</li><li class='fa-bolt'>Lightning bolt</li><li class='fa-users'>Shadow clone technique</li></ul>");
-      }
-    });
-  });
+});
 
+function twoStepForm () {
   //New grow two step form
   $('#new_grow').submit(function(e) {
     handleCreate(e);
@@ -35,8 +23,37 @@ $(function() {
       console.log("failed");
     });
   }
+  $("#grow_name").on("change keydown paste input", function() {
+    $("#grow_name").css("border", "solid 2px #e4e4e4");
+  });
+  $("#grow_description").on("change keydown paste input", function() {
+    $("#grow_description").css("border", "solid 2px #e4e4e4");
+  });
+}
 
+function handleNotifications() {
+  $('#dismiss').click(function(e) {
+  e.preventDefault();
+  $.ajax({
+    url:  $('#dismiss').attr('href'),
+    type: 'POST',
+    success:function(data) {
+      $("#two .container").html("<p>No notifications. Don't worry, notifications will appear here and via email as soon as we need your attention!</p><ul class='feature-icons'><li class='fa-code'>Scheduled event</li><li class='fa-cubes'>Temperature is too high</li><li class='fa-book'>Check humidity</li><li class='fa-coffee'>Drink much coffee</li><li class='fa-bolt'>Lightning bolt</li><li class='fa-users'>Shadow clone technique</li></ul>");
+    }
+  });
 });
+}
+
+function handleSchedule() {
+  $('#new_schedule').on('ajax:error', function(event, xhr, status, error) {
+    $(this).append(xhr.responseText);
+  });
+  $('#new_schedule').on('ajax:success', function(event, data, status, xhr) {
+    $(".features").append(data);
+    $("#datetimepicker").val("");
+    $("#schedule_title").val("");
+  });
+}
 
 function dropDownData() {
   return $.ajax({
@@ -54,7 +71,7 @@ function handleDropdown (dropdownData) {
     imagePosition:"left",
     onSelected: function(selectedData){
       $('#grow_api_location').val(selectedData.selectedData.value);
-        $('.dd-select').css( "border", "solid 3px #e4e4e4");
+      $('#select_device').css( "border", "none");
     }   
   });
 }
@@ -68,8 +85,14 @@ function handleCreate (e) {
         $('#step_one').hide("fast");
         $('#step_two').show("fast");
       }).fail(function (data) {
-        $('.dd-select').css( "border", "solid 3px #ff0000");
+        $('#select_device').css( "border", "solid 1px #ff0000");
       });
+      if($('#grow_name').val()==""){
+        $('#grow_name').css( "border", "solid 1px #ff0000");
+      }
+      if($('#grow_description').val()==""){
+        $('#grow_description').css( "border", "solid 1px #ff0000");
+      }
     }
     else{
       $('#new_grow').unbind('submit').submit()
@@ -89,7 +112,7 @@ function getSuggestedData (text) {
   });
 }
 
-function init_slider () {
+function horizontalValueSliderInit () {
   $("#temperature_slider").noUiSlider({
     start: [$('#grow_temp_low').val(), $('#grow_temp_high').val()],
     connect: true,
