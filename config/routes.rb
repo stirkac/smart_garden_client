@@ -6,7 +6,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   root 'static#index'
   get 'index' => 'index#index'
-  get 'register_device' => 'devices#index'
+  post 'register_device' => 'devices#index'
   resources :grows, :path => "my-gardens" do
     post "dismiss_notifications" => 'grows#dismiss'
     get "suggested_data" => 'grows#suggested_data', on: :collection
