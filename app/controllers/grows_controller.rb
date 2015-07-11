@@ -72,7 +72,7 @@ class GrowsController < ApplicationController
   def get_devices
     devices = Device.present
     data = []
-    devices.empty? ? data.push({text: "No devices available...", value: "", description: "Please make sure sensor is fully powered on and has internet connection.", imageSrc: "http://www.mind-difference.info/wp-content/uploads/2014/08/SADFACE-2.png" }) : data=devices.map {|device| {text: device.api_location, value: device.api_location, selected: false, description: "Connected #{time_ago_in_words(device.created_at)} ago.", imageSrc: "https://www.raspberrypi.org/wp-content/uploads/2012/02/Raspian_SD-150x150.png"}}
+    devices.empty? ? data.push({text: "No devices available...", value: "", description: "Please make sure sensor is fully powered on and has internet connection.", imageSrc: "/assets/sad.png" }) : data=devices.map {|device| {text: device.api_location, value: device.api_location, selected: false, description: "Connected #{time_ago_in_words(device.created_at)} ago.", imageSrc: "/assets/raspberry.png"}}
     render json: data
   end
 
