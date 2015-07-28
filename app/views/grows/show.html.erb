@@ -41,39 +41,62 @@
 
 <section id="three">
 	<div class="container">
-		<h3>Schedule</h3>
-		<p>Need to remember something? Schedules will keep you on track.</p>
-		<%=form_for([@grow, Schedule.new], remote: true , :html => {'data-type' => 'html'}) do |f| %>
-		<div class="row">
-			<div class="4u">
-				<%=f.text_field :time, id: "datetimepicker", placeholder: "Select date", required: true %>
-			</div>
-			<div class="5u">
-				<%=f.text_field :title, placeholder: "Description", required: true %>
-			</div>
-			<div class="2u">
-				<%=f.submit "Add reminder", class: "button special" %>
-			</div>
-		</div>
-		<%end%>
-		
+		<h3>Growing</h3>
 		<div class="features">
-			<% if @grow.schedules.present.present? %>
-				<% @grow.schedules.present.each do |schedule| %>
-					<article>
-						<div class="inner">
-							<h4><%=schedule.title.capitalize%></h4>
-							<p>Your should check back in <%=time_ago_in_words schedule.time %>!</p>
-						</div>
-					</article>
-				<% end %>
-			<% end %>
 			<article>
+				<a class="image"><%=image_tag @grow.image_url %></a>
 				<div class="inner">
-					<h4>Harvest</h4>
-					<p>Your crop should be available in <%=time_ago_in_words DateTime.now+23.days %>!</p>
+					<h4><%=@grow.description%></h4>
+					<p><i>(<%=@grow.latin%>)</i></p>
+					<ul class="actions move-down">
+							<div class="row">
+							<div class="6u">
+								<li><a id="display-tips" class="button special center">Display tips</a></li>
+							</div>
+							<div class="6u">
+								<li><%=link_to "Learn more", @grow.info_link, id: "info_link", class: "button center" %></li>
+							</div>
+						</div>
+					</ul>
 				</div>
 			</article>
+		</div>
+		<div id="tips" class="move-down" style="display:none">
+			<h4>Feching data, please wait... <i class='fa fa-cog fa-spin fa-2x'></i></h4>
+		</div>
+		<div id="schedule">
+			<p>Need to remember something? Schedules will keep you on track.</p>
+			<%=form_for([@grow, Schedule.new], remote: true , :html => {'data-type' => 'html'}) do |f| %>
+			<div class="row">
+				<div class="4u">
+					<%=f.text_field :time, id: "datetimepicker", placeholder: "Select date", required: true %>
+				</div>
+				<div class="5u">
+					<%=f.text_field :title, placeholder: "Description", required: true %>
+				</div>
+				<div class="2u">
+					<%=f.submit "Add reminder", class: "button special" %>
+				</div>
+			</div>
+			<%end%>
+			<div class="features">
+				<% if @grow.schedules.present.present? %>
+					<% @grow.schedules.present.each do |schedule| %>
+						<article>
+							<div class="inner">
+								<h4><%=schedule.title.capitalize%></h4>
+								<p>Your should check back in <%=time_ago_in_words schedule.time %>!</p>
+							</div>
+						</article>
+					<% end %>
+				<% end %>
+				<article>
+					<div class="inner">
+						<h4>Harvest</h4>
+						<p>Your crop should be available in <%=time_ago_in_words DateTime.now+23.days %>!</p>
+					</div>
+				</article>
+			</div>
 		</div>
 	</div>
 </section>
@@ -126,12 +149,12 @@
 		<hr>
 		<p class="bold">About garden</p>
 		<div class="12u">
-			<div class="6u">Notifications address</div>
-			<div class="12u"><small><%=current_user.email%></small></div>
-		</div>
-		<div class="12u">
 			<div class="6u">Plant name</div>
 			<div class="12u"><small><%=@grow.description%></small></div>
+		</div>
+		<div class="12u">
+			<div class="6u">Notifications address</div>
+			<div class="12u"><small><%=current_user.email%></small></div>
 		</div>
 		<div class="12u">
 			<div class="6u">Date of creation</div>

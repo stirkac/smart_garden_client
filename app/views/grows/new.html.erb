@@ -1,9 +1,9 @@
 <section id="two">
 	<div class="container">
-		<h3>New plant to grow</h3>
-
+		<h3>Create a new garden</h3>
 			<div id="search">
-				<div class="row">
+				<p>What would you like to grow?</p>
+				<div class="row move-up">
 					<div class="10u">
 						<input id="search-input" type="text" placeholder="Enter a name of a plant...">
 					</div>
@@ -64,8 +64,17 @@
 						<div id="humidity_slider"></div>
 					</div>
 				</div>
-
+				<div class="12u">
+					<div class="8u">Approximate harvest in about <span id="s_grow_weeks"></span> weeks</div>
+					<div class="12u">
+						<div id="week_slider"></div>
+					</div>
+				</div>
+				<%=hidden_field_tag :grow_weeks, required: true %>
 				<%=f.hidden_field :description, required: true %>
+				<%=f.hidden_field :info_link, required: true %>
+				<%=f.hidden_field :image_url, required: true %>
+				<%=f.hidden_field :latin %>
 				<%=f.hidden_field :temp_high, value: 23 %>
 				<%=f.hidden_field :temp_low, value: 15 %>
 				<%=f.hidden_field :hum_high, value: 60 %>

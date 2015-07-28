@@ -33,6 +33,7 @@ class GrowsController < ApplicationController
 
   def create
     @grow = Grow.new(grows_attr)
+    @grow.crop = DateTime.now + params[:grow_weeks].to_i.weeks
     @grow.user = current_user
     if @grow.save
 			flash[:notice] = "Garden saved successfully."
@@ -78,7 +79,7 @@ class GrowsController < ApplicationController
 
   private
   def grows_attr
-    p = params.require(:grow).permit(:api_location, :name, :description, :temp_high, :temp_low, :hum_high, :hum_low, :allow_sharing)
+    p = params.require(:grow).permit(:api_location, :name, :description, :temp_high, :temp_low, :hum_high, :hum_low, :allow_sharing, :info_link, :image_url, :latin, :grow_weeks)
   end
 
 end

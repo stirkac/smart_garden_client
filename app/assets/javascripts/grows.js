@@ -4,13 +4,16 @@ $(function() {
   }
   //Get data where applicable
   if (typeof address_location !== 'undefined') {
-    getChartData(address_location).done(requestSuccess).fail(requestFailed);
+    getChartData(address_location).done(requestSuccess).fail(function() {
+      $("#chartdiv").html("<h1 class='center'>Unable to get data! Please double check your settings.</h1>");
+    });
     getCurrentData(address_location);
   }
   horizontalValueSliderInit(); //temperature and humidity sliders
   twoStepForm(); //new garden form
   handleNotifications(); //notifications on show page
   handleSchedule(); //schedules on show page
+  handleTips();
   var elem = document.querySelector('.js-switch');
   var init = new Switchery(elem, { color: '#4acaa8'});
 });
@@ -25,6 +28,22 @@ function twoStepForm () {
     $("#search").hide("fast");
     $("#new_grow").show("fast");
   });
+
+  //week slider
+  $("#week_slider").noUiSlider({
+    start: [ 20 ],
+    step: 2,
+    range: {
+      'min': [  3 ],
+      'max': [ 52 ]
+    },
+    format: wNumb({
+      mark: '',
+      decimals: 0
+    })
+  });
+  $("#week_slider").Link('lower').to($("#grow_weeks"));
+  $("#week_slider").Link('lower').to($("#s_grow_weeks"));
 
   //New grow two step form
   $('#new_grow').submit(function(e) {
@@ -223,14 +242,16 @@ function displaySearchResults() {
           $("#search-results").html("<h4>Sorry, but nothing matched your search...</h4>");
         }else{
           array = $.map( data.results, function(plant, index ) {
-            var name = plant.name;
+            //Remove unused arrays
             if(Object.prototype.toString.call(plant.image) === '[object Array]'){
               return;
             }
+            var name = plant.name;
             if(plant['image/_alt']!=undefined){
               name = plant['image/_alt'].charAt(0).toUpperCase()+plant['image/_alt'].substring(1);
             }
-            return { text: name, value: "", description: plant.name, imageSrc: plant.image };
+            var location=plant.location.substring(0, plant.location.indexOf("?returnurl"));
+            return { text: name, value: location, description: plant.name, imageSrc: plant.image };
           });
           $("#search-results").ddslick('destroy');
           $("#search-results").empty();
@@ -242,18 +263,35 @@ function displaySearchResults() {
             imagePosition:"left",
             onSelected: function(selectedData){
               $('#grow_description').val(selectedData.selectedData.text);
+              $('#grow_latin').val(selectedData.selectedData.description);
+              $('#grow_info_link').val(selectedData.selectedData.value);
+              $('#grow_image_url').val(selectedData.selectedData.imageSrc);
               $('#search-controls').show("fast");
             }   
           });
         }
       }
     ).fail(function () {
-      alert("Failed to fetch data");
+      $("#search-results").html("<h4>Sorry, but search has failed...</h4>");
     });
 }
 
-function requestFailed (argument) {
-  $("#chartdiv").html("<h1 class='center'>Unable to get data! Please double check your settings.</h1>")
+function handleTips() {
+  $("#display-tips").on("click", function () {
+    $("#tips").show("slow");
+    $("#schedule").hide("fast");
+    console.log(encodeURIComponent($("#info_link").attr('href')));
+    $.ajax({
+      url: "https://api.import.io/store/data/f07831b6-a9c2-44f0-adbc-46a705f94bb6/_query?input/webpage/url="+
+        encodeURIComponent($("#info_link").attr('href'))
+      +"&_user=66e71c7a-dcc8-48b5-b4eb-17caded5898a&_apikey=66e71c7adcc848b5b4eb17caded5898ad1545e5535c6ce33bc47185159ca7a7515786eaecf3c72a47ce7f0e987ce4c323b118d4f51297c048bc9b976915f8b4dfba3ac214a3768beb6df68b72c0a86cf"
+    }).success(function (data) {
+      console.dir(data);
+      $("#tips").html(data.results[0].how_to[0]+data.results[0].how_to[1]);
+    }).fail(function () {
+      $("#tips").html("<h4>Sorry, but search has failed...</h4>");
+    });
+  });
 }
 
 function makeChart (data) {

@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150630093319) do
+ActiveRecord::Schema.define(version: 20150728181256) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -36,6 +36,10 @@ ActiveRecord::Schema.define(version: 20150630093319) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.boolean  "allow_sharing"
+    t.string   "info_link"
+    t.string   "image_url"
+    t.string   "latin"
+    t.datetime "crop"
   end
 
   add_index "grows", ["user_id"], name: "index_grows_on_user_id", using: :btree
