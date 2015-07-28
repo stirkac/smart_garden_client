@@ -20,6 +20,9 @@
 						<% if current_user.present? %>
 							<p><small>Signed in as</small></p>
 							<p class="move-up-md"><%=current_user.grows.count > 1 ? link_to("#{current_user.email}", grows_path) : "#{current_user.email}"%></p>
+							<% if display_navigation %>
+								<p><%=link_to "add a new garden", new_grow_path, class: "icon fa-plus"%></p>
+							<% end %>
 						<% else %>
 							<p>All you need for perfect crop</p>
 						<% end %>
@@ -38,7 +41,6 @@
 						<ul class="icons">
 							<li><a href="https://twitter.com/stirkac" class="icon fa-twitter">follow<span class="label">Twitter</span></a></li>
 							<li><a href="http://facebook.com/sebastjan.stojnsek" class="icon fa-thumbs-up">like<span class="label">Facebook</span></a></li>
-							<li><%=link_to "create", new_grow_path, class: "icon fa-plus fa-2x"%></li>
 						</ul>
 					</footer>
 				</section>

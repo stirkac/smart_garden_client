@@ -169,7 +169,7 @@ function horizontalValueSliderInit () {
 
 function getCurrentData (address) {
   $.ajax({
-    url:  address+"/current",
+    url:  address+"/current.json",
     success:function(data) {
       $("#current_temp").text(data['temperature'].toFixed(1)+"°C");
       $("#current_hum").text(data['humidity'].toFixed(1)+"%");
@@ -179,7 +179,7 @@ function getCurrentData (address) {
 
 function getChartData(address) {
     return $.ajax({
-        url : address+"/statuses",
+        url : address+"/statuses.json",
         type: 'GET'
     });
 }
