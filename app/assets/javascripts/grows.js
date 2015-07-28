@@ -1,4 +1,7 @@
 $(function() {
+  String.prototype.capitalize = function() {
+    return this.charAt(0).toUpperCase() + this.slice(1);
+  }
   //Get data where applicable
   if (typeof address_location !== 'undefined') {
     getChartData(address_location).done(requestSuccess).fail(requestFailed);
@@ -13,6 +16,16 @@ $(function() {
 });
 
 function twoStepForm () {
+  //plants search
+  $("#search-button").on("click", displaySearchResults);
+  $("#search-input").keypress(function (e) {
+    if (e.which == 13) { displaySearchResults(); }
+  });
+  $("#search-continue").on("click", function () {
+    $("#search").hide("fast");
+    $("#new_grow").show("fast");
+  });
+
   //New grow two step form
   $('#new_grow').submit(function(e) {
     handleCreate(e);
@@ -195,6 +208,48 @@ function requestSuccess(data) {
     };
     makeChart(chartData);
     return chartData;
+}
+
+function displaySearchResults() {
+  $("#search-results").html("<h4>Searching, please wait... <i class='fa fa-cog fa-spin fa-2x'></i></h4>");
+  $.ajax({
+        url : "https://api.import.io/store/data/e3cdc2f9-0f3a-4c5b-b24e-55b55f61ea3e/_query?input/webpage/url=https%3A%2F%2Fwww.rhs.org.uk%2FPlants%2FSearch-Results%3Fform-mode%3Dtrue%26context%3Dl%253Den%2526q%253Dstrawberry%2526sl%253DplantForm%26query%3D"+
+          encodeURIComponent($("#search-input").val())
+        +"&_user=66e71c7a-dcc8-48b5-b4eb-17caded5898a&_apikey=66e71c7adcc848b5b4eb17caded5898ad1545e5535c6ce33bc47185159ca7a7515786eaecf3c72a47ce7f0e987ce4c323b118d4f51297c048bc9b976915f8b4dfba3ac214a3768beb6df68b72c0a86cf",
+        type: 'GET'
+    }).success(
+      function (data) {
+        if(data.results.length<1){
+          $("#search-results").html("<h4>Sorry, but nothing matched your search...</h4>");
+        }else{
+          array = $.map( data.results, function(plant, index ) {
+            var name = plant.name;
+            if(Object.prototype.toString.call(plant.image) === '[object Array]'){
+              return;
+            }
+            if(plant['image/_alt']!=undefined){
+              name = plant['image/_alt'].charAt(0).toUpperCase()+plant['image/_alt'].substring(1);
+            }
+            return { text: name, value: "", description: plant.name, imageSrc: plant.image };
+          });
+          $("#search-results").ddslick('destroy');
+          $("#search-results").empty();
+          $("#search-results").ddslick({
+            data: array,
+            width: "100%",
+            background: "#FFF",
+            selectText: "Select your plant",
+            imagePosition:"left",
+            onSelected: function(selectedData){
+              $('#grow_description').val(selectedData.selectedData.text);
+              $('#search-controls').show("fast");
+            }   
+          });
+        }
+      }
+    ).fail(function () {
+      alert("Failed to fetch data");
+    });
 }
 
 function requestFailed (argument) {

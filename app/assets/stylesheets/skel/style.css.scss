@@ -1061,6 +1061,8 @@
 
 	#wrapper {
 		background: #fff;
+		min-height: 700px !important;
+    height: auto !important;
 		padding-right: 23em;
 	}
 
@@ -1212,6 +1214,10 @@
 	display: none;
 }
 
+#new_grow{
+	display: none;
+}
+
 small {
 	font-size: 80%;
 	margin-left: 3%;
@@ -1290,4 +1296,15 @@ li { display: inline; }
 		font-style: italic !important;
 		opacity: 1.0;
 }
-
+#search:after {
+		background-image: image-url("create-bg.jpg");
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		content: '';
+		margin-top: 5em;
+		margin-left: -11em;
+		display: block;
+		height: 16em;
+		width: 160%;
+	}

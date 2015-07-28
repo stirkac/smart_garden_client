@@ -1,17 +1,38 @@
 <section id="two">
 	<div class="container">
 		<h3>New plant to grow</h3>
+
+			<div id="search">
+				<div class="row">
+					<div class="10u">
+						<input id="search-input" type="text" placeholder="Enter a name of a plant...">
+					</div>
+					<div class="2u"><a class="button special" id="search-button">Search</a></div>
+					<div class="move-down" style="width:100%">
+						<div id="search-results"></div>
+						<div id="search-controls" class="move-down" style="display:none">
+							<p>Great choice! Now, let's setup your garden.</p>
+							<hr>
+		  				<div class="row">
+		  						<div class="12u">
+		  							<ul class="actions">
+		  			  				<li><%=link_to "Continue", "#", class: "button special", id: "search-continue" %></li>
+		  			  				<li class="move-down"><%=link_to "Cancel", grows_path, class: "special" %></li>
+		  			  			</ul>
+		  			  		</div>
+		  			  </div>
+	  			  </div>
+					</div>
+				</div>
+			</div>
+
   		<%= form_for Grow.new, :url => { :action => "create" } do |f| %>
+
   			<div id="step_one">
 				<div class="row uniform">
 					<div class="6u move-down"><p>Please enter information about your garden.</p></div>
 					<div class="12u move-up">
-	            		<%= f.text_field :name, required: true, :placeholder => "Garden name", required: true %>
-					</div>
-				</div>
-				<div class="row uniform">
-					<div class="12u">
-						<%= f.text_area :description, :placeholder => "Enter name of plant you are growing...", required: true %>
+							<%= f.text_area :name, :placeholder => "Enter a name of your garden...", required: true %>
 					</div>
 				</div>
 				<div class="12u move-down">
@@ -30,7 +51,7 @@
 				<hr>
 			</div>
 			<div id="step_two">
-				<p>Values below are suggested based on your description. Please adjust values.</p>
+				<p>Values below are suggested based on your plant. Please adjust values.</p>
 				<div class="12u">
 					<div class="8u"><i class="fa fa-fire"></i> <span id="s_temp_low"></span>°C - <span id="s_temp_high"></span>°C</div>
 					<div class="12u">
@@ -43,6 +64,8 @@
 						<div id="humidity_slider"></div>
 					</div>
 				</div>
+
+				<%=f.hidden_field :description, required: true %>
 				<%=f.hidden_field :temp_high, value: 23 %>
 				<%=f.hidden_field :temp_low, value: 15 %>
 				<%=f.hidden_field :hum_high, value: 60 %>
