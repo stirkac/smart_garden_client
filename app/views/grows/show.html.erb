@@ -51,7 +51,7 @@
 					<ul class="actions move-down">
 							<div class="row">
 							<div class="6u">
-								<li><a id="display-tips" class="button special center">Display tips</a></li>
+								<li><a id="display-tips" class="button special center">Growing tips</a></li>
 							</div>
 							<div class="6u">
 								<li><%=link_to "Learn more", @grow.info_link, id: "info_link", class: "button center" %></li>
@@ -65,7 +65,7 @@
 			<h4>Feching data, please wait... <i class='fa fa-cog fa-spin fa-2x'></i></h4>
 		</div>
 		<div id="schedule">
-			<p>Need to remember something? Schedules will keep you on track.</p>
+			<p>Need to remember something? <b>Add a reminder</b> to keep you on track.</p>
 			<%=form_for([@grow, Schedule.new], remote: true , :html => {'data-type' => 'html'}) do |f| %>
 			<div class="row">
 				<div class="4u">
@@ -79,7 +79,7 @@
 				</div>
 			</div>
 			<%end%>
-			<div class="features">
+			<div class="features" id="schedules">
 				<% if @grow.schedules.present.present? %>
 					<% @grow.schedules.present.each do |schedule| %>
 						<article>

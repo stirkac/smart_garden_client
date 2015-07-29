@@ -25,8 +25,8 @@ function twoStepForm () {
     if (e.which == 13) { displaySearchResults(); }
   });
   $("#search-continue").on("click", function () {
-    $("#search").hide("fast");
-    $("#new_grow").show("fast");
+    $("#search").slideUp("fast");
+    $("#new_grow").slideDown("fast");
   });
 
   //week slider
@@ -81,7 +81,7 @@ function handleSchedule() {
     $(this).append(xhr.responseText);
   });
   $('#new_schedule').on('ajax:success', function(event, data, status, xhr) {
-    $(".features").append(data);
+    $("#schedules").append(data);
     $("#datetimepicker").val("");
     $("#schedule_title").val("");
   });
@@ -114,8 +114,8 @@ function handleCreate (e) {
       getChartData($('#grow_api_location').val()).done(function (data) {
         getSuggestedData($('#grow_description').val());
         $('input[name="commit"]').val("Add to My Gardens");
-        $('#step_one').hide("fast");
-        $('#step_two').show("fast");
+        $('#step_one').slideUp("fast");
+        $('#step_two').slideDown("fast");
       }).fail(function (data) {
         $('#select_device').css( "border", "solid 1px #ff0000");
       });
@@ -266,7 +266,7 @@ function displaySearchResults() {
               $('#grow_latin').val(selectedData.selectedData.description);
               $('#grow_info_link').val(selectedData.selectedData.value);
               $('#grow_image_url').val(selectedData.selectedData.imageSrc);
-              $('#search-controls').show("fast");
+              $('#search-controls').slideDown("fast");
             }   
           });
         }
@@ -278,18 +278,23 @@ function displaySearchResults() {
 
 function handleTips() {
   $("#display-tips").on("click", function () {
-    $("#tips").show("slow");
-    $("#schedule").hide("fast");
-    console.log(encodeURIComponent($("#info_link").attr('href')));
+    $("#tips").slideDown("slow");
+    $("#schedule").slideUp("fast");
     $.ajax({
       url: "https://api.import.io/store/data/f07831b6-a9c2-44f0-adbc-46a705f94bb6/_query?input/webpage/url="+
         encodeURIComponent($("#info_link").attr('href'))
       +"&_user=66e71c7a-dcc8-48b5-b4eb-17caded5898a&_apikey=66e71c7adcc848b5b4eb17caded5898ad1545e5535c6ce33bc47185159ca7a7515786eaecf3c72a47ce7f0e987ce4c323b118d4f51297c048bc9b976915f8b4dfba3ac214a3768beb6df68b72c0a86cf"
     }).success(function (data) {
-      console.dir(data);
       $("#tips").html(data.results[0].how_to[0]+data.results[0].how_to[1]);
+      $("#display-tips").slideUp("fast");
+      $("#tips").append("<div class='center'><a id='close-tips' style='width=100%'>close tips</a></div>");
+      $("#close-tips").on("click", function () {
+        $("#display-tips").slideDown("fast");
+        $("#tips").slideUp("fast");
+        $("#schedule").slideDown("slow");
+      });
     }).fail(function () {
-      $("#tips").html("<h4>Sorry, but search has failed...</h4>");
+      $("#tips").html("<h4>Sorry, but error occured...</h4>");
     });
   });
 }
