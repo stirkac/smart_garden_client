@@ -2,15 +2,24 @@
 	<div class="container">
 		<h2>My Gardens</h2>
 		<p>Overview your gardens from here</p>
-		<ul>
+		<div class="features">
 			<%@grows.each do |grow| %>
-				<hr>
-				<li class="fa-code"><%=link_to grow.name, grow%> <small><%=grow.notifications.not_dismissed.count%> 
-				<%="notification".pluralize grow.notifications.not_dismissed.count %> pending</small></li>
+				<article>
+					<%=link_to image_tag(grow.image_url), grow, class: "image"%>
+					<div class="inner">
+						<%=link_to grow do  %>
+						<h4><%=grow.name%></h4>
+						<p><%=grow.description%><br><i>(<%=grow.latin%>)</i></p>
+						<p><small><%=grow.notifications.not_dismissed.count%> 
+						<%="notification".pluralize grow.notifications.not_dismissed.count %> pending</small></p>
+						<% end %>
+					</div>
+				</article>
 			<%end%>
-		</ul>
+		</div>
 		<h3>Another garden?</h3>
-		<%=link_to "Add new Garden", new_grow_path, class: "button special" %>
+		<p class="move-down">Add a new sensor device and garden by following the link below.</p>
+		<%=link_to "Add new Garden", new_grow_path, class: "button special move-up" %>
 	</div>
 </section>
 

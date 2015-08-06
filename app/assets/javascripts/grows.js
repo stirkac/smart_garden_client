@@ -5,7 +5,9 @@ $(function() {
   //Get data where applicable
   if (typeof address_location !== 'undefined') {
     getChartData(address_location).done(requestSuccess).fail(function() {
-      $("#chartdiv").html("<h1 class='center'>Unable to get data! Please double check your settings.</h1>");
+      $("#chartdiv").empty();
+      $("#chartdiv").html("<div class='center'><h2 class='move-down fa fa-frown-o fa-5x'></h2></div><h1 class='center'>This garden's sensor appears to be offline.</h1>");
+      $("#current").slideUp("fast");
     });
     getCurrentData(address_location);
   }
@@ -19,48 +21,53 @@ $(function() {
 });
 
 function twoStepForm () {
-  //plants search
-  $("#search-button").on("click", displaySearchResults);
-  $("#search-input").keypress(function (e) {
-    if (e.which == 13) { displaySearchResults(); }
-  });
-  $("#search-continue").on("click", function () {
-    $("#search").slideUp("fast");
-    $("#new_grow").slideDown("fast");
-  });
+  if(window.location.href.indexOf("new") > -1) {
+    //plants search
+    $("#search-button").on("click", displaySearchResults);
+    $("#search-input").keypress(function (e) {
+      if (e.which == 13) { displaySearchResults(); }
+    });
+    $("#search-continue").on("click", function () {
+      $("#search").slideUp("fast");
+      $("#new_grow").slideDown("fast");
+    });
 
-  //week slider
-  $("#week_slider").noUiSlider({
-    start: [ 20 ],
-    step: 2,
-    range: {
-      'min': [  3 ],
-      'max': [ 52 ]
-    },
-    format: wNumb({
-      mark: '',
-      decimals: 0
-    })
-  });
-  $("#week_slider").Link('lower').to($("#grow_weeks"));
-  $("#week_slider").Link('lower').to($("#s_grow_weeks"));
+    //week slider
+    $("#week_slider").noUiSlider({
+      start: [ 20 ],
+      step: 2,
+      range: {
+        'min': [  3 ],
+        'max': [ 52 ]
+      },
+      format: wNumb({
+        mark: '',
+        decimals: 0
+      })
+    });
+    $("#week_slider").Link('lower').to($("#grow_weeks"));
+    $("#week_slider").Link('lower').to($("#s_grow_weeks"));
 
-  //New grow two step form
-  $('#new_grow').submit(function(e) {
-    handleCreate(e);
-  });
-  //New grow dropdown
-  if ($('#select_device').css('display') != 'none') {
-    dropDownData().done(handleDropdown).fail(function(){
-      console.log("failed");
+    //New grow two step form
+    $('#new_grow').submit(function(e) {
+      handleCreate(e);
+    });
+    //New grow dropdown
+    if ($('#select_device').css('display') != 'none') {
+      $.ajax({
+            url : "available_devices",
+            type: 'GET'
+        }).done(handleDropdown).fail(function(){
+        console.log("failed");
+      });
+    }
+    $("#grow_name").on("change keydown paste input", function() {
+      $("#grow_name").css("border", "solid 2px #e4e4e4");
+    });
+    $("#grow_description").on("change keydown paste input", function() {
+      $("#grow_description").css("border", "solid 2px #e4e4e4");
     });
   }
-  $("#grow_name").on("change keydown paste input", function() {
-    $("#grow_name").css("border", "solid 2px #e4e4e4");
-  });
-  $("#grow_description").on("change keydown paste input", function() {
-    $("#grow_description").css("border", "solid 2px #e4e4e4");
-  });
 }
 
 function handleNotifications() {
@@ -84,13 +91,6 @@ function handleSchedule() {
     $("#schedules").append(data);
     $("#datetimepicker").val("");
     $("#schedule_title").val("");
-  });
-}
-
-function dropDownData() {
-  return $.ajax({
-      url : "available_devices",
-      type: 'GET'
   });
 }
 
