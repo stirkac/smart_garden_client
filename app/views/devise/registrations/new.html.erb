@@ -7,7 +7,7 @@
 
       <div class="field">
         <%= f.label :email, class: "move-down" %><br />
-        <%= f.email_field :email, autofocus: true, class: "move-up-lg" %>
+        <%= f.email_field :email, autofocus: true, class: "move-up-lg", placeholder: "you@example.com" %>
       </div>
 
       <div class="field">
@@ -17,7 +17,7 @@
 
       <div class="field">
         <%= f.label :password_confirmation, class: "move-down" %><br />
-        <%= f.password_field :password_confirmation, autocomplete: "off", class: "move-up-lg" %>
+        <%= f.password_field :password_confirmation, autocomplete: "off", class: "move-up-lg", placeholder: "enter the password again" %>
       </div>
 
       <div class="actions move-down">
