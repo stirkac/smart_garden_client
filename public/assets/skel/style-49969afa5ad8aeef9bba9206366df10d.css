@@ -1,0 +1,1504 @@
+@import url("http://fonts.googleapis.com/css?family=Lato:400,400italic,700,700italic|Source+Code+Pro:400");
+/*
+	Read Only by HTML5 UP
+	html5up.net | @n33co
+	Free for personal and commercial use under the CCA 3.0 license (html5up.net/license)
+*/
+/* Basic */
+/* line 12, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+body {
+  background: #fff;
+}
+
+/* line 16, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+body, input, select, textarea {
+  color: #888;
+  font-family: "Lato", sans-serif;
+  font-size: 16pt;
+  font-weight: 400;
+  line-height: 1.75em;
+}
+
+/* line 24, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+a {
+  -moz-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  -webkit-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  -o-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  -ms-transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  transition: color 0.2s ease-in-out, border-color 0.2s ease-in-out;
+  border-bottom: solid 1px #e4e4e4;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* line 35, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+a:hover {
+  border-bottom-color: transparent;
+  color: #4acaa8 !important;
+}
+
+/* line 40, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+strong, b {
+  color: #777;
+  font-weight: 700;
+}
+
+/* line 45, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+em, i {
+  font-style: italic;
+}
+
+/* line 49, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+p {
+  margin: 0 0 2.25em 0;
+}
+
+/* line 53, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+h1, h2, h3, h4, h5, h6 {
+  color: #777;
+  font-weight: 700;
+  line-height: 1em;
+  margin: 0 0 0.5625em 0;
+}
+
+/* line 60, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
+  border: 0;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* line 66, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+h2 {
+  font-size: 2em;
+  line-height: 1.5em;
+}
+
+/* line 71, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+h3 {
+  font-size: 1.75em;
+  line-height: 1.5em;
+}
+
+/* line 76, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+h4 {
+  font-size: 1.25em;
+  line-height: 1.5em;
+}
+
+/* line 81, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+h5 {
+  font-size: 0.9em;
+  line-height: 1.5em;
+}
+
+/* line 86, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+h6 {
+  font-size: 0.7em;
+  line-height: 1.5em;
+}
+
+/* line 91, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+sub {
+  font-size: 0.8em;
+  position: relative;
+  top: 0.5em;
+}
+
+/* line 97, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+sup {
+  font-size: 0.8em;
+  position: relative;
+  top: -0.5em;
+}
+
+/* line 103, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+hr {
+  border: 0;
+  border-bottom: solid 2px #f4f4f4;
+  margin: 2.25em 0;
+}
+
+/* line 109, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+hr.major {
+  margin: 3.375em 0;
+}
+
+/* line 113, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+blockquote {
+  border-left: solid 8px #e4e4e4;
+  font-style: italic;
+  margin: 0 0 2.25em 0;
+  padding: 0.5em 0 0.5em 2em;
+}
+
+/* line 120, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+code {
+  background: #555;
+  border-radius: 5px;
+  color: #fff;
+  font-family: "Source Code Pro", monospace;
+  font-size: 0.9em;
+  margin: 0 0.25em;
+  padding: 0.25em 0.65em;
+}
+
+/* line 130, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+pre {
+  font-family: "Source Code Pro", monospace;
+  font-size: 0.9em;
+  margin: 0 0 2.25em 0;
+}
+
+/* line 136, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+pre code {
+  -webkit-overflow-scrolling: touch;
+  display: block;
+  line-height: 1.5em;
+  overflow-x: auto;
+  padding: 1em 1.5em;
+}
+
+/* line 144, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.align-left {
+  text-align: left;
+}
+
+/* line 148, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.align-center {
+  text-align: center;
+}
+
+/* line 152, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.align-right {
+  text-align: right;
+}
+
+/* Section/Article */
+/* line 158, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+section.special, article.special {
+  text-align: center;
+}
+
+/* line 162, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+header p {
+  color: #aaa;
+  position: relative;
+  margin: 0 0 1.6875em 0;
+}
+
+/* line 168, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+header h2 + p {
+  font-size: 1.25em;
+  margin-top: -0.5em;
+  line-height: 1.5em;
+}
+
+/* line 174, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+header h3 + p {
+  font-size: 1.1em;
+  margin-top: -0.35em;
+  line-height: 1.5em;
+}
+
+/* line 182, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+header h4 + p,
+header h5 + p,
+header h6 + p {
+  font-size: 0.9em;
+  margin-top: -0.25em;
+  line-height: 1.5em;
+}
+
+/* line 188, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+header.major h2 {
+  color: #4acaa8;
+  font-size: 3.5em;
+}
+
+/* line 193, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+header.major h2 + p {
+  color: #777;
+  font-size: 1.75em;
+  font-weight: 700;
+  margin-top: -0.75em;
+}
+
+/* Form */
+/* line 202, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+form {
+  margin: 0 0 2.25em 0;
+}
+
+/* line 206, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+label {
+  color: #777;
+  display: block;
+  font-size: 0.9em;
+  font-weight: 700;
+  margin: 0 0 1.125em 0;
+}
+
+/* line 214, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input::-moz-focus-inner {
+  border: 0;
+  padding: 0;
+}
+
+/* line 223, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select,
+textarea {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -o-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  border-radius: 5px;
+  border: none;
+  border: solid 2px #e4e4e4;
+  color: inherit;
+  display: block;
+  outline: 0;
+  padding: 0 1em;
+  text-decoration: none;
+  width: 100%;
+}
+
+/* line 244, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="text"]:invalid,
+input[type="password"]:invalid,
+input[type="email"]:invalid,
+select:invalid,
+textarea:invalid {
+  box-shadow: none;
+}
+
+/* line 252, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus,
+select:focus,
+textarea:focus {
+  border-color: #4acaa8;
+}
+
+/* line 256, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.select-wrapper {
+  text-decoration: none;
+  display: block;
+  position: relative;
+}
+
+/* line 262, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.select-wrapper:before {
+  content: '\f078';
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none !important;
+}
+
+/* line 272, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.select-wrapper:before {
+  color: #e4e4e4;
+  display: block;
+  height: 2.75em;
+  line-height: 2.75em;
+  pointer-events: none;
+  position: absolute;
+  right: 0;
+  text-align: center;
+  top: 0;
+  width: 2.75em;
+}
+
+/* line 285, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.select-wrapper select::-ms-expand {
+  display: none;
+}
+
+/* line 292, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="text"],
+input[type="password"],
+input[type="email"],
+select {
+  height: 2.75em;
+}
+
+/* line 296, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+textarea {
+  padding: 0.75em 1em;
+}
+
+/* line 301, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="checkbox"],
+input[type="radio"] {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -o-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  display: block;
+  float: left;
+  margin-right: -2em;
+  opacity: 0;
+  width: 1em;
+  z-index: -1;
+}
+
+/* line 316, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="checkbox"] + label,
+input[type="radio"] + label {
+  text-decoration: none;
+  color: #888;
+  cursor: pointer;
+  display: inline-block;
+  font-size: 1em;
+  font-weight: 400;
+  padding-left: 2.4em;
+  padding-right: 0.75em;
+  position: relative;
+}
+
+/* line 329, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="checkbox"] + label:before,
+input[type="radio"] + label:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none !important;
+}
+
+/* line 339, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="checkbox"] + label:before,
+input[type="radio"] + label:before {
+  background: #fafafa;
+  border-radius: 5px;
+  border: solid 2px #e4e4e4;
+  content: '';
+  display: inline-block;
+  height: 1.65em;
+  left: 0;
+  line-height: 1.58125em;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 1.65em;
+}
+
+/* line 355, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="checkbox"]:checked + label:before,
+input[type="radio"]:checked + label:before {
+  background: #989898;
+  border-color: #989898;
+  color: #ffffff;
+  content: '\f00c';
+}
+
+/* line 363, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="checkbox"]:focus + label:before,
+input[type="radio"]:focus + label:before {
+  border-color: #4acaa8;
+}
+
+/* line 367, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="checkbox"] + label:before {
+  border-radius: 5px;
+}
+
+/* line 371, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="radio"] + label:before {
+  border-radius: 100%;
+}
+
+/* line 375, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+::-webkit-input-placeholder {
+  color: #aaa !important;
+  font-style: italic;
+  opacity: 1.0;
+}
+
+/* line 381, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+:-moz-placeholder {
+  color: #aaa !important;
+  font-style: italic;
+  opacity: 1.0;
+}
+
+/* line 387, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+::-moz-placeholder {
+  color: #aaa !important;
+  font-style: italic;
+  opacity: 1.0;
+}
+
+/* line 393, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+:-ms-input-placeholder {
+  color: #aaa !important;
+  font-style: italic;
+  opacity: 1.0;
+}
+
+/* line 399, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.formerize-placeholder {
+  color: #aaa !important;
+  font-style: italic;
+  opacity: 1.0;
+}
+
+/* Box */
+/* line 407, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.box {
+  border-radius: 5px;
+  border: solid 2px #e4e4e4;
+  margin-bottom: 2.25em;
+  padding: 1.5em;
+}
+
+/* line 416, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.box > :last-child,
+.box > :last-child > :last-child,
+.box > :last-child > :last-child > :last-child {
+  margin-bottom: 0;
+}
+
+/* line 420, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.box.alt {
+  border: 0;
+  border-radius: 0;
+  padding: 0;
+}
+
+/* Icon */
+/* line 428, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.icon {
+  text-decoration: none;
+  border-bottom: none;
+  position: relative;
+}
+
+/* line 434, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.icon:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none !important;
+}
+
+/* line 443, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.icon > .label {
+  display: none;
+}
+
+/* Image */
+/* line 449, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.image {
+  border-radius: 5px;
+  border: 0;
+  display: inline-block;
+  position: relative;
+}
+
+/* line 456, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.image img {
+  border-radius: 5px;
+  display: block;
+}
+
+/* line 461, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.image.left {
+  float: left;
+  margin: 0 2.5em 2em 0;
+  top: 0.25em;
+}
+
+/* line 467, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.image.right {
+  float: right;
+  margin: 0 0 2em 2.5em;
+  top: 0.25em;
+}
+
+/* line 473, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.image.fit {
+  display: block;
+  margin: 0 0 2.25em 0;
+  width: 100%;
+}
+
+/* line 479, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.image.fit img {
+  display: block;
+  width: 100%;
+}
+
+/* line 484, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.image.avatar {
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+/* line 489, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.image.avatar img {
+  border-radius: 100%;
+  display: block;
+  width: 100%;
+}
+
+/* Alert */
+/* line 496, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#alert {
+  width: 60%;
+  position: fixed;
+  top: 20px;
+  left: 50%;
+  margin: 0 0 0 -37.5%;
+  color: #444;
+  text-align: center;
+  border-radius: 5px;
+  background-color: rgba(255, 255, 255, 0.8);
+}
+
+/* line 508, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.alert-error {
+  color: red;
+}
+
+/* line 511, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.alert-alert {
+  color: white;
+}
+
+/* List */
+/* line 517, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ol {
+  list-style: decimal;
+  margin: 0 0 2.25em 0;
+  padding-left: 1.25em;
+}
+
+/* line 523, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ol li {
+  padding-left: 0.25em;
+}
+
+/* line 527, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ul {
+  list-style: disc;
+  margin: 0 0 2.25em 0;
+  padding-left: 1em;
+}
+
+/* line 533, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ul li {
+  padding-left: 0.5em;
+}
+
+/* line 537, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ul.alt {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* line 542, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ul.alt li {
+  border-top: solid 2px #f4f4f4;
+  padding: 0.5em 0;
+}
+
+/* line 547, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ul.alt li:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+/* line 552, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ul.feature-icons {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* line 557, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ul.feature-icons li {
+  text-decoration: none;
+  display: inline-block;
+  margin: 0 0 1.6875em 0;
+  padding: 0.35em 0 0 3.5em;
+  position: relative;
+  width: 48%;
+}
+
+/* line 566, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ul.feature-icons li:before {
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-font-smoothing: antialiased;
+  font-family: FontAwesome;
+  font-style: normal;
+  font-weight: normal;
+  text-transform: none !important;
+}
+
+/* line 575, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ul.feature-icons li:before {
+  background: #4acaa8;
+  border-radius: 100%;
+  color: #ffffff;
+  display: block;
+  height: 2.5em;
+  left: 0;
+  line-height: 2.5em;
+  position: absolute;
+  text-align: center;
+  top: 0;
+  width: 2.5em;
+}
+
+/* line 589, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ul.icons {
+  cursor: default;
+  list-style: none;
+  padding-left: 0;
+}
+
+/* line 595, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ul.icons li {
+  display: inline-block;
+  padding: 0 1em 0 0;
+}
+
+/* line 600, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ul.icons li:last-child {
+  padding-right: 0 !important;
+}
+
+/* line 604, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ul.icons li .icon:before {
+  font-size: 1.25em;
+}
+
+/* line 608, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ul.actions {
+  cursor: default;
+  list-style: none;
+  padding-left: 0;
+}
+
+/* line 614, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ul.actions li {
+  display: inline-block;
+  padding: 0 1.125em 0 0;
+  vertical-align: middle;
+}
+
+/* line 620, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ul.actions li:last-child {
+  padding-right: 0;
+}
+
+/* line 624, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ul.actions.small li {
+  padding: 0 0.5625em 0 0;
+}
+
+/* line 628, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ul.actions.vertical li {
+  display: block;
+  padding: 1.125em 0 0 0;
+}
+
+/* line 633, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ul.actions.vertical li:first-child {
+  padding-top: 0;
+}
+
+/* line 637, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ul.actions.vertical li > * {
+  margin-bottom: 0;
+}
+
+/* line 641, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ul.actions.vertical.small li {
+  padding: 0.5625em 0 0 0;
+}
+
+/* line 645, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ul.actions.vertical.small li:first-child {
+  padding-top: 0;
+}
+
+/* line 649, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ul.actions.fit {
+  display: table;
+  margin-left: -1.125em;
+  padding: 0;
+  table-layout: fixed;
+  width: calc(100% + 1.125em);
+}
+
+/* line 657, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ul.actions.fit li {
+  display: table-cell;
+  padding: 0 0 0 1.125em;
+}
+
+/* line 662, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ul.actions.fit li > * {
+  margin-bottom: 0;
+}
+
+/* line 666, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ul.actions.fit.small {
+  margin-left: -0.5625em;
+  width: calc(100% + 0.5625em);
+}
+
+/* line 671, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+ul.actions.fit.small li {
+  padding: 0 0 0 0.5625em;
+}
+
+/* line 675, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+dl {
+  margin: 0 0 2.25em 0;
+}
+
+/* Table */
+/* line 681, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.table-wrapper {
+  -webkit-overflow-scrolling: touch;
+  overflow-x: auto;
+}
+
+/* line 686, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+table {
+  margin: 0 0 2.25em 0;
+  width: 100%;
+}
+
+/* line 691, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+table tbody tr {
+  border: solid 2px #f4f4f4;
+  border-left: 0;
+  border-right: 0;
+}
+
+/* line 697, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+table tbody tr:nth-child(2n + 1) {
+  background-color: #fafafa;
+}
+
+/* line 701, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+table td {
+  padding: 0.75em 0.75em;
+}
+
+/* line 705, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+table th {
+  color: #777;
+  font-size: 0.9em;
+  font-weight: 700;
+  padding: 0 0.75em 0.75em 0.75em;
+  text-align: left;
+}
+
+/* line 713, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+table thead {
+  border-bottom: solid 4px #e4e4e4;
+}
+
+/* line 717, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+table tfoot {
+  border-top: solid 4px #e4e4e4;
+}
+
+/* line 721, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+table.alt {
+  border-collapse: separate;
+}
+
+/* line 725, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+table.alt tbody tr td {
+  border: solid 2px #e4e4e4;
+  border-left-width: 0;
+  border-top-width: 0;
+}
+
+/* line 731, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+table.alt tbody tr td:first-child {
+  border-left-width: 2px;
+}
+
+/* line 735, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+table.alt tbody tr:first-child td {
+  border-top-width: 2px;
+}
+
+/* line 739, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+table.alt thead {
+  border-bottom: 0;
+}
+
+/* line 743, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+table.alt tfoot {
+  border-top: 0;
+}
+
+/* Button */
+/* line 752, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="submit"],
+input[type="reset"],
+input[type="button"],
+.button {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -o-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  -moz-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  -webkit-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  -o-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  -ms-transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  transition: background-color 0.2s ease-in-out, color 0.2s ease-in-out;
+  background-color: #989898;
+  border-radius: 5px;
+  border: 0;
+  color: #ffffff !important;
+  cursor: pointer;
+  display: inline-block;
+  font-weight: 700;
+  height: 2.75em;
+  line-height: 2.75em;
+  padding: 0 1.5em;
+  text-align: center;
+  text-decoration: none;
+  white-space: nowrap;
+}
+
+/* line 781, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="submit"]:hover,
+input[type="reset"]:hover,
+input[type="button"]:hover,
+.button:hover {
+  background-color: #a5a5a5;
+  color: #ffffff !important;
+}
+
+/* line 789, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="submit"]:active,
+input[type="reset"]:active,
+input[type="button"]:active,
+.button:active {
+  background-color: #8b8b8b;
+}
+
+/* line 796, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="submit"].icon,
+input[type="reset"].icon,
+input[type="button"].icon,
+.button.icon {
+  padding-left: 1.35em;
+}
+
+/* line 803, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="submit"].icon:before,
+input[type="reset"].icon:before,
+input[type="button"].icon:before,
+.button.icon:before {
+  margin-right: 0.5em;
+}
+
+/* line 810, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="submit"].fit,
+input[type="reset"].fit,
+input[type="button"].fit,
+.button.fit {
+  display: block;
+  margin: 0 0 1.125em 0;
+  width: 100%;
+}
+
+/* line 819, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="submit"].small,
+input[type="reset"].small,
+input[type="button"].small,
+.button.small {
+  font-size: 0.8em;
+}
+
+/* line 826, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="submit"].big,
+input[type="reset"].big,
+input[type="button"].big,
+.button.big {
+  font-size: 1.35em;
+}
+
+/* line 833, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="submit"].alt,
+input[type="reset"].alt,
+input[type="button"].alt,
+.button.alt {
+  background-color: transparent;
+  box-shadow: inset 0 0 0 2px #e4e4e4;
+  color: #777 !important;
+}
+
+/* line 842, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="submit"].alt:hover,
+input[type="reset"].alt:hover,
+input[type="button"].alt:hover,
+.button.alt:hover {
+  background-color: #f4f4f4;
+  color: #777 !important;
+}
+
+/* line 850, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="submit"].alt:active,
+input[type="reset"].alt:active,
+input[type="button"].alt:active,
+.button.alt:active {
+  background-color: #eaeaea;
+}
+
+/* line 857, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="submit"].alt.icon:before,
+input[type="reset"].alt.icon:before,
+input[type="button"].alt.icon:before,
+.button.alt.icon:before {
+  color: #aaa;
+}
+
+/* line 864, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="submit"].special,
+input[type="reset"].special,
+input[type="button"].special,
+.button.special {
+  background-color: #4acaa8;
+  color: #ffffff !important;
+}
+
+/* line 872, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="submit"].special:hover,
+input[type="reset"].special:hover,
+input[type="button"].special:hover,
+.button.special:hover {
+  background-color: #5ed0b1;
+}
+
+/* line 879, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="submit"].special:active,
+input[type="reset"].special:active,
+input[type="button"].special:active,
+.button.special:active {
+  background-color: #39c29d;
+}
+
+/*RED*/
+/* line 887, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="submit"].special-red,
+input[type="reset"].special-red,
+input[type="button"].special-red,
+.button.special-red {
+  background-color: #FA7D61;
+  color: #ffffff !important;
+}
+
+/* line 895, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="submit"].special-red:hover,
+input[type="reset"].special-red:hover,
+input[type="button"].special-red:hover,
+.button.special-red:hover {
+  background-color: #ED9682;
+}
+
+/* line 902, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="submit"].special-red:active,
+input[type="reset"].special-red:active,
+input[type="button"].special-red:active,
+.button.special-red:active {
+  background-color: #EB6A4D;
+}
+
+/**/
+/* line 913, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+input[type="submit"].disabled, input[type="submit"]:disabled,
+input[type="reset"].disabled,
+input[type="reset"]:disabled,
+input[type="button"].disabled,
+input[type="button"]:disabled,
+.button.disabled,
+.button:disabled {
+  background-color: #888 !important;
+  box-shadow: inset 0 -0.15em 0 0 rgba(0, 0, 0, 0.15);
+  color: #fff !important;
+  cursor: default;
+  opacity: 0.25;
+}
+
+/* Features */
+/* line 923, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.features article {
+  border-top: solid 3px #f4f4f4;
+  margin-bottom: 2.25em;
+  padding-top: 2.25em;
+}
+
+/* line 929, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.features article:first-child {
+  border-top: 0;
+  padding-top: 0;
+}
+
+/* line 934, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.features article .image {
+  display: inline-block;
+  padding-right: 2.5em;
+  vertical-align: middle;
+  width: 48%;
+}
+
+/* line 941, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.features article .image img {
+  display: block;
+  width: 100%;
+}
+
+/* line 946, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.features article .inner {
+  display: inline-block;
+  vertical-align: middle;
+  width: 50%;
+}
+
+/* line 952, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.features article .inner > :last-child {
+  margin-bottom: 0;
+}
+
+/* Header */
+/* line 958, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#header {
+  background: #4acaa8;
+  color: #d1f1e9;
+  height: 100%;
+  position: fixed;
+  text-align: center;
+  top: 0;
+  width: 23em;
+  right: 0;
+}
+
+/* line 969, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#header h1, #header h2, #header h3, #header h4, #header h5, #header h6 {
+  color: #ffffff;
+}
+
+/* line 973, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#header h1 a, #header h2 a, #header h3 a, #header h4 a, #header h5 a, #header h6 a {
+  color: #ffffff;
+}
+
+/* line 977, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#header header p {
+  color: #b6e9dc;
+}
+
+/* line 981, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#header a {
+  color: #d1f1e9;
+}
+
+/* line 985, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#header a:hover {
+  color: #ffffff !important;
+}
+
+/* line 989, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#header > header {
+  padding: 3em;
+}
+
+/* line 993, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#header > header .avatar {
+  display: block;
+  margin: 0 auto 2.25em auto;
+  width: 8em;
+}
+
+/* line 999, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#header > header h1 {
+  font-size: 1.75em;
+  margin: 0;
+}
+
+/* line 1004, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#header > header p {
+  color: #d1f1e9;
+  font-style: italic;
+  margin: 1em 0 0 0;
+}
+
+/* line 1010, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#header > footer {
+  bottom: 0;
+  left: 0;
+  padding: 2em;
+  position: absolute;
+  width: 100%;
+}
+
+/* line 1018, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#header > footer .icons {
+  margin: 0;
+}
+
+/* line 1022, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#header > footer .icons li a {
+  color: #b6e9dc;
+}
+
+/* line 1026, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#header > nav ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+/* line 1032, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#header > nav ul li {
+  border-top: solid 2px #5ccfb0;
+  display: block;
+  padding: 0;
+}
+
+/* line 1038, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#header > nav ul li a {
+  -moz-transition: none;
+  -webkit-transition: none;
+  -o-transition: none;
+  -ms-transition: none;
+  transition: none;
+  border: 0;
+  color: #ffffff !important;
+  display: block;
+  padding: 0.85em 0;
+  text-decoration: none;
+}
+
+/* line 1051, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#header > nav ul li a.active {
+  background: #fff;
+  color: #4acaa8 !important;
+}
+
+/* line 1056, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#header > nav ul li:first-child {
+  border-top: 0;
+}
+
+/* Wrapper */
+/* line 1062, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#wrapper {
+  background: #fff;
+  min-height: 700px !important;
+  height: auto !important;
+  padding-right: 23em;
+}
+
+/* Main */
+/* line 1071, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#main > section {
+  border-top: solid 6px #f4f4f4;
+}
+
+/* line 1075, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#main > section > .container {
+  padding: 5em 0 4em 0;
+}
+
+/* line 1079, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#main > section:first-child {
+  border-top: 0;
+}
+
+/* One */
+/* line 1085, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#one:before {
+  background-image: url(/assets/header-bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: '';
+  display: block;
+  height: 15em;
+  width: 100%;
+}
+
+/* Footer */
+/* line 1098, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#footer {
+  background: #fafafa;
+  border-top: 0;
+  color: #c0c0c0;
+  overflow: hidden;
+  padding: 4em 0 2em 0;
+}
+
+/* line 1106, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#footer .copyright {
+  line-height: 1em;
+  list-style: none;
+  padding: 0;
+}
+
+/* line 1112, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#footer .copyright li {
+  border-left: solid 1px #d4d4d4;
+  display: inline-block;
+  font-size: 0.8em;
+  margin-left: 1em;
+  padding-left: 1em;
+}
+
+/* line 1120, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#footer .copyright li:first-child {
+  border-left: 0;
+  margin-left: 0;
+  padding-left: 0;
+}
+
+/* line 1126, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#footer .copyright li a {
+  color: inherit;
+}
+
+/* Other */
+/* line 1131, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#current {
+  margin: 0 0 8px;
+  color: #777;
+  font-size: 35px;
+  font-weight: 300;
+  text-align: center;
+  text-shadow: 0px 1px 3px rgba(0, 0, 0, 0.15);
+  margin-top: 20px;
+}
+
+/* line 1140, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#current small {
+  font-size: 14px;
+}
+
+/* line 1144, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#current .after {
+  color: #4acaa8;
+}
+
+/* line 1148, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#current_temp {
+  color: #4acaa8;
+  padding-right: 20px;
+  display: inline;
+}
+
+/* line 1153, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#current_hum {
+  border-left: 2px solid #aaa;
+  padding-left: 20px;
+  display: inline;
+}
+
+/* line 1159, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#chartdiv {
+  color: red;
+}
+
+/* line 1163, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#temperature_slider {
+  margin-bottom: 50px;
+}
+
+/* line 1167, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#humidity_slider {
+  margin-bottom: 50px;
+}
+
+/* line 1174, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.center {
+  margin: 0 auto;
+  text-align: center;
+}
+
+/* line 1179, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.align-right {
+  text-align: right;
+}
+
+/* line 1183, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.noUi-connect {
+  background-color: #4acaa8;
+}
+
+/* line 1187, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.bold {
+  font-weight: bold;
+}
+
+/* line 1191, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.move-up {
+  margin-top: -10px;
+}
+
+/* line 1195, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.move-up-md {
+  margin-top: -10px !important;
+}
+
+/* line 1199, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.move-up-lg {
+  margin-top: -45px;
+}
+
+/* line 1203, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.move-down {
+  margin-top: 20px;
+}
+
+/* line 1206, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.move-down-lg {
+  margin-top: 100px;
+}
+
+/* line 1209, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.move-down-md {
+  margin-top: 50px;
+}
+
+/* line 1215, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+a > h4:hover {
+  text-decoration: underline;
+}
+
+/* line 1218, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#step_two {
+  display: none;
+}
+
+/* line 1222, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#new_grow {
+  display: none;
+}
+
+/* line 1226, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+small {
+  font-size: 80%;
+  margin-left: 3%;
+}
+
+@media screen and (max-width: 640px) {
+  /* line 1232, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+  #current_hum {
+    border-left: none;
+  }
+}
+/* line 1238, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.btn-social {
+  display: inline-block;
+  width: 50px;
+  height: 50px;
+  border: 2px solid #fff;
+  border-radius: 100%;
+  text-align: center;
+  font-size: 20px;
+  line-height: 45px;
+}
+
+/* line 1250, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.btn-outline {
+  margin-top: 15px;
+  border: solid 2px #fff;
+  font-size: 20px;
+  color: #fff;
+  background: 0 0;
+  transition: all .3s ease-in-out;
+}
+
+/* line 1262, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.btn-outline:hover,
+.btn-outline:focus,
+.btn-outline:active,
+.btn-outline.active {
+  border: solid 2px #fff;
+  color: #18bc9c;
+  background: #fff;
+}
+
+/* line 1268, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+li {
+  display: inline;
+}
+
+/* line 1270, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#footer2 {
+  padding-top: 2em;
+  padding-bottom: 0.5em;
+}
+
+/* line 1274, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.row h3 {
+  color: white;
+}
+
+/* line 1278, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.dd-selected {
+  font-weight: 200 !important;
+  border-bottom-color: transparent;
+}
+
+/* line 1282, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.dd-selected:hover {
+  color: #aaa !important;
+}
+
+/* line 1286, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+.dd-select {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  -o-appearance: none;
+  -ms-appearance: none;
+  appearance: none;
+  border-radius: 5px !important;
+  border: none !important;
+  border: solid 2px #e4e4e4 !important;
+  display: block;
+  outline: 0;
+  padding: 0 1em;
+  text-decoration: none !important;
+  width: 100%;
+  color: #aaa !important;
+  font-style: italic !important;
+  opacity: 1.0;
+}
+
+/* line 1304, /Users/stirkac/Projects/openshift/smart_garden_client/app/assets/stylesheets/skel/style.css.scss */
+#search:after {
+  background-image: url(/assets/create-bg.jpg);
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  content: '';
+  margin-top: 5em;
+  margin-left: -11em;
+  display: block;
+  height: 16em;
+  width: 160%;
+}
