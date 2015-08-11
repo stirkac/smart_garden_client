@@ -20,9 +20,6 @@
 						<% if current_user.present? %>
 							<p><small>Signed in as</small></p>
 							<p class="move-up-md"><%=current_user.grows.count > 1 ? link_to("#{current_user.email}", grows_path) : "#{current_user.email}"%></p>
-							<% if display_navigation %>
-								<p><%=link_to "add a new garden", new_grow_path, class: "icon fa-plus"%></p>
-							<% end %>
 						<% else %>
 							<p>All you need for perfect crop</p>
 						<% end %>
@@ -30,7 +27,10 @@
 					<% if display_navigation %>
 						<nav id="nav">
 							<ul>
-								<li><a href="#one" class="active">Overview</a></li>
+								<% if display_navigation %>
+									<li><%=link_to "Dashboard", grows_path %></li>
+								<% end %>
+								<li><a href="#one" class="active">Status</a></li>
 								<li><a href="#two">Notificatons</a></li>
 								<li><a href="#three">Growing</a></li>
 								<li><a href="#four">Settings</a></li>

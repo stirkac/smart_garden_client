@@ -3,7 +3,7 @@ class DevicesController < ApplicationController
 	skip_before_filter  :verify_authenticity_token
 
 	def index
-		if Grow.where(api_location: "http://"+request.remote_ip).empty? && Device.present.where(api_location: "http://"+request.remote_ip).empty?
+		if Grow.where(api_location: "http://"+request.remote_ip).empty? || Device.present.where(api_location: "http://"+request.remote_ip).empty?
 			@device=Device.new(api_location: "http://"+request.remote_ip).save!
 			respond_to do |format|
 				format.json do

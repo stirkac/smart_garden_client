@@ -5,12 +5,9 @@ class GrowsController < ApplicationController
 
   def index
     @grows = current_user.grows
-    case @grows.size
-    when 0
+    if @grows.size < 1
 			flash[:notice] = "Please add a new garden before continuing."
       redirect_to new_grow_path
-    when 1
-      redirect_to @grows.first
     end
   end
 
