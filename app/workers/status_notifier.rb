@@ -9,6 +9,7 @@ class StatusNotifier
     Grow.not_updated.each do |grow|
       begin
         current_status = HTTParty.get(grow.api_location + "/current.json")
+        logger.debug(current_status.to_json)
         if current_status.code < 400
           unless (current_status["humidity"].between?(grow.hum_low, grow.hum_high) and current_status["temperature"].between?(grow.temp_low, grow.temp_high))
             status=Status.new current_status
