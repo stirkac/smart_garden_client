@@ -22,6 +22,7 @@ class Notification < ActiveRecord::Base
   after_commit :notify_user, on: :create
 
   def notify_user
+    logger.info("Sending notification for reason: "+content)
     case self[:content]
     when "params_not_in_range"
       NotificationMailer.status_notification_email(status: status, grow: grow).deliver
