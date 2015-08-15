@@ -4,5 +4,5 @@
 <ul>
 	<%=render partial: "shared/notification_list", :locals => {:grow => @grow, :status => @status} %>
 </ul>
-<p><%=link_to "Check your garden wherever you are", @grow %> </p>
-<p>Your <%=link_to "SmartGarden", root_path %></p>
+<p><%=link_to "Check your garden wherever you are", grow_url(@grow) %> </p>
+<p>Your <%=link_to "SmartGarden", root_url %></p>

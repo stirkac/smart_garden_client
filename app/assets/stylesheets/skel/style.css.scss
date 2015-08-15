@@ -1313,3 +1313,7 @@ li { display: inline; }
 		height: 16em;
 		width: 160%;
 	}
+
+#tips strong:after {
+		content: ':';
+}
